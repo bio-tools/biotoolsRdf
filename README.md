@@ -1,6 +1,7 @@
 # biotoolsRdf
-RDF data generated from Bio.Tools
+RDF data and SPARQL queries for producing/consuming Bio.Tools as Linked Data. 
 
+## Sample SPARL query
 Here is a sample query run on this dataset. It connects persons with "share the same interest" relation when the tools they are associated to are annoated with the same EDAM topic.
 
 ```
