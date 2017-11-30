@@ -1,5 +1,5 @@
 # biotoolsRdf
-RDF data and SPARQL queries for producing/consuming Bio.Tools as Linked Data. 
+RDF data and SPARQL queries for producing/consuming Bio.Tools as Linked Data. RDF datasets have been produced through the [biotoolsShim/json2rdf](https://github.com/bio-tools/biotoolsShim/tree/master/json2rdf) tool. 
 
 ## Sample SPARL query
 Here is a sample query run on this dataset. It connects persons with "share the same interest" relation when the tools they are associated to are annoated with the same EDAM topic.
