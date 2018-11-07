@@ -37,6 +37,8 @@ biotools:RelatedResource     | |
 biotools:RelatedResourceType | |
 biotools:Credit              | |
 biotools:CreditType          | |
+biotools:Publication         | |
+biotools:PublicationType     | |
 
 subclasses of biotools:RelatedResourceType:
 
@@ -103,3 +105,16 @@ dcterms:identifier           | xsd:token                    | ```<credit><orcidi
 rdfs:comment                 | xsd:token                    | ```<credit><note>```
 dcterms:type                 | biotools:CreditType          | ```<credit><typeEntity>|<typeRole>```
 
+
+
+## biotools:Publication
+
+![biotools:RelatedResource](images/Publication.PNG)
+
+property                     | value                        | biotoolsSchema
+---------------------------- | --------------               | ---------------------
+dcterms:identifier           | xsd:token                    | ```<publication><doi>```
+dcterms:identifier           | xsd:token                    | ```<publication><pmid>```
+dcterms:identifier           | xsd:token                    | ```<publication><pmcid>```
+dcterms:type                 | biotools:PublicationType     | ```<publication><type>```
+pov:hasVersion               | xsd:token                    | ```<publication><version>```
