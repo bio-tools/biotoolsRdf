@@ -34,7 +34,7 @@ biotools:Maturity            | Software development stage      | ```<labels><mat
 biotools:OtherId             | Software unique identifier      | ```<summary><otherID>```
 biotools:OtherIdType         | Type of software identifier     | ```<summary><otherID><type>```
 biotools:Function            | Software function / mode        | ```<function>```
-biotools:Data                | Input or output data            | ```<function><input> | <output>```
+biotools:Data                | Input or output data            | ```<function><input><output>```
 edam:Data                    | Type of data                    | ```<function><input>|<output><data>```
 edam:Format                  | Format of data                  | ```<function><input>|<output><format>```
 edam:Operation               | Basic operation / method        | ```<function><operation>```
