@@ -9,6 +9,7 @@ biotoolsRDF is a lightweight ontology and re-uses other well established vocabul
 biotoolsRDF uses classes and properties from the following vocabularies.
 
 prefix   | namespace IRI                               | definition
+-------- | ------------------------------------------- | ----------
 rdf      | http://www.w3.org/1999/02/22-rdf-syntax-ns# | The [RDF namespace](https://www.w3.org/TR/prov-o/#bib-RDF-CONCEPTS)
 xsd      | http://www.w3.org/2000/10/XMLSchema#        | XML [Schema Namespace](https://www.w3.org/TR/prov-o/#bib-XMLSCHEMA11-2)
 prov     | http://www.w3.org/ns/prov#                  | The [PROV namespace](https://www.w3.org/TR/prov-o/#bib-PROV-DM)
@@ -25,6 +26,7 @@ dcmitype | http://purl.org/dc/dcmitype/                | Classes in the [DCMI Ty
 
 
 property              | object         | biotoolsSchema
+--------------------- | -------------- | ---------------------
 biotools:hasInput     | biotools:Data  | <function><input>
 biotools:hasOperation | edam:Operation | <function><operation>
 biotools:hasOutput    | biotools:Data  | <function><output>
@@ -34,6 +36,7 @@ rdfs:comment          | xsd:token      | <function><note>
 ## biotools:Data
 
 property               | object      | biotoolsSchema
+---------------------- | ----------- | ----------------------------------
 biotools:hasDataType   | edam:Data   | <function><input>|<output><Data>
 biotools:hasDataFormat | edam:Format | <function><input>|<output><Format>
 
