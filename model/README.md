@@ -22,7 +22,7 @@ dcmitype | http://purl.org/dc/dcmitype/                | Classes in the [DCMI Ty
 
 ## biotools:Function
 
-![biotools:Function and biotools:Data](images/Function.png)
+![biotools:Function and biotools:Data](images/Function.PNG)
 
 
 property              | object         | biotoolsSchema
