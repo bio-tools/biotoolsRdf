@@ -26,6 +26,14 @@ biotoolsRDF uses the following classes:
 class                        | description | biotoolsSchema
 ---------------------------- | ----------- | --------------
 biotools:Tool                | |
+biotools:ToolType            | |
+biotools:OperatingSystem     | |
+biotools:Language            | |
+biotools:License             | |
+biotools:Maturity            | |
+
+biotools:OtherId             | |
+biotools:OtherIdType         | |
 biotools:Function            | |
 biotools:Data                | |
 edam:Data                    | |
@@ -39,6 +47,7 @@ biotools:Credit              | |
 biotools:CreditType          | |
 biotools:Publication         | |
 biotools:PublicationType     | |
+
 
 subclasses of biotools:RelatedResourceType:
 
@@ -57,9 +66,51 @@ biotools:CreditTypeEntity    |                       |
 biotools:CreditTypeRole      |                       | 
 
 
+
+## biotools:Tool
+
+![biotools:Tool](images/Function.PNG)
+
+
+property                 | value                     | biotoolsSchema
+---------------------    | --------------            | ---------------------
+dcterms:title (1)        | xsd:token                 | ```<summary><name>```
+dcterms:description      | xsd:token                 | ```<summary><description>```
+foaf:page                | xsd:anyURI                | ```<summary><homepage>```
+dcterms:identifier       | xsd:token                 | ```<summary><biotoolsID>```
+dcterms:identifier       | xsd:token                 | ```<summary><biotoolsCURIE>```
+pov:hasVersion           | xsd:token                 | ```<summary><version>```
+biotools:hasOtherId      | biotools:OtherId          | ```<summary><otherID>```
+dcterms:type             | biotools:ToolType         | ```<labels><toolType>```
+dcterms:subject (2)      | edam:Topic                | ```<labels><topic>```
+biotools:operatingSystem | biotools:OperatingSystem  | ```<labels><operatingSystem>```
+dcterms:language         | biotools:Language         | ```<labels><language>```
+dcterms:license          | biotools:License          | ```<labels><license>```
+biotools:collectionId    | xsd:token                 | ```<labels><collectionID>```
+biotools:maturity        | biotools:Maturity         | ```<labels><maturity>```
+
+
+
+(1) foaf:name also applicable
+(2) foaf:topic also applicable
+
+
+
+## biotools:OtherId
+
+![biotools:OtherId](images/OtherId.PNG)
+
+property                     | value                        | biotoolsSchema
+---------------------------- | --------------               | ---------------------
+dcterms:identifier           | xsd:token                    | ```<otherid><value>```
+dcterms:type                 | biotools:OtherIdType         | ```<otherid<type>```
+pov:hasVersion               | xsd:token                    | ```<otherid><version>```
+
+
+
 ## biotools:Function
 
-![biotools:Function:Data](images/Function.PNG)
+![biotools:Function](images/Function.PNG)
 
 
 property              | value          | biotoolsSchema
@@ -94,7 +145,7 @@ dcterms:type                 | biotools:RelatedResourceType | ```<link>|<downloa
 
 ## biotools:Credit
 
-![biotools:RelatedResource](images/Credit.PNG)
+![biotools:Credit](images/Credit.PNG)
 
 property                     | value                        | biotoolsSchema
 ---------------------------- | --------------               | ---------------------
@@ -109,7 +160,7 @@ dcterms:type                 | biotools:CreditType          | ```<credit><typeEn
 
 ## biotools:Publication
 
-![biotools:RelatedResource](images/Publication.PNG)
+![biotools:Publication](images/Publication.PNG)
 
 property                     | value                        | biotoolsSchema
 ---------------------------- | --------------               | ---------------------
@@ -118,3 +169,6 @@ dcterms:identifier           | xsd:token                    | ```<publication><p
 dcterms:identifier           | xsd:token                    | ```<publication><pmcid>```
 dcterms:type                 | biotools:PublicationType     | ```<publication><type>```
 pov:hasVersion               | xsd:token                    | ```<publication><version>```
+
+
+
