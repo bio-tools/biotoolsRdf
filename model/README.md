@@ -83,10 +83,10 @@ biotools:hasDataFormat | edam:Format | <function><input>|<output><Format>
 
 property                     | value                        | biotoolsSchema
 ---------------------------- | --------------               | ---------------------
-foaf:page                    | xsd:anyURI                   | ```<link><download><documentation><uri>```
-rdfs:comment                 | xsd:token                    | ```<link><download><documentation><note>```
-pov:hasVersion               | xsd:token                    | ```<link><download><documentation><version>```
-dcterms:type                 | biotools:RelatedResourceType | ```<link><download><documentation><type>```
+foaf:page                    | xsd:anyURI                   | ```<link>|<download>|<documentation><uri>```
+rdfs:comment                 | xsd:token                    | ```<link>|<download>|<documentation><note>```
+pov:hasVersion               | xsd:token                    | ```<link>|<download>|<documentation><version>```
+dcterms:type                 | biotools:RelatedResourceType | ```<link>|<download>|<documentation><type>```
 
 
 
@@ -102,3 +102,4 @@ foaf:page                    | xsd:anyURI                   | ```<credit><url>``
 dcterms:identifier           | xsd:token                    | ```<credit><orcidid>```
 rdfs:comment                 | xsd:token                    | ```<credit><note>```
 dcterms:type                 | biotools:CreditType          | ```<credit><typeEntity>|<typeRole>```
+
