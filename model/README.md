@@ -1,6 +1,6 @@
 # Introduction
 
-**CAUTION: biotoolsRDF is under construction; please contribute via https://github.com/bio-tools/biotoolsRdf/issues **
+**CAUTION: biotoolsRDF is under construction; please contribute via the [tracker](https://github.com/bio-tools/biotoolsRdf/issues)**
 
 The biotools ontology (biotoolsRDF) defines the OWL2 Web Ontology Language encoding of [biotoolsSchema](https://github.com/bio-tools/biotoolsschema); the resource description model for bioinformatics software.  This document describes the set of classes, properties and restrictions that can be used to represent and interchange information about software provided in different systems and contexts.
 
