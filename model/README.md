@@ -49,7 +49,7 @@ xsd:token                    | String (with restrictions)      | -
 xsd:anyURI                   | URI                             | - 
 
 
-## Subclasses of biotools:RelatedResourceType:
+## Subclasses of biotools:RelatedResourceType
 
 class                        | description           | biotoolsSchema
 ---------------------------- | --------------------- | --------------
@@ -58,14 +58,14 @@ biotools:DownloadType        | Type of download      | ```<download><type>```
 biotools:DocumentationType   | Type of documentation | ```<documentation><type>```
 
 
-## Subclasses of biotools:CreditType:
+## Subclasses of biotools:CreditType
 
 class                        | description             | biotoolsSchema
 ---------------------------- | ----------------------- | --------------
 biotools:CreditTypeEntity    | Type of credited entity | ```<credit><typeEntity>```
 biotools:CreditTypeRole      | Role of credited entity | ```<credit><typeRole>```
 
-## Subclasses of biotools:ElixirCredit:
+## Subclasses of biotools:ElixirCredit
 
 class                        | description              | biotoolsSchema
 ---------------------------- | ------------------------ | --------------
@@ -114,10 +114,11 @@ rdfs:comment                | Misc. entity has an associated note
 
 
 
+# Data model
 
 ## biotools:Tool
 
-![biotools:Tool](images/Function.PNG)
+![biotools:Tool](images/Tool.PNG)
 
 
 property                        | value                     | biotoolsSchema
@@ -178,8 +179,8 @@ rdfs:comment          | xsd:token      | ```<function><note>```
 
 property               | value       | biotoolsSchema
 ---------------------- | ----------- | ----------------------------------
-biotools:hasDataType   | edam:Data   | <function><input>/<output><Data>
-biotools:hasDataFormat | edam:Format | <function><input>/<output><Format>
+biotools:hasDataType   | edam:Data   | ```<function><input>/<output><Data>```
+biotools:hasDataFormat | edam:Format | ```<function><input>/<output><Format>```
 
 
 
