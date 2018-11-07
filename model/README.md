@@ -38,7 +38,7 @@ biotools:Data                | Input or output data            | ```<function><i
 edam:Data                    | Type of data                    | ```<function><input>/<output><data>```
 edam:Format                  | Format of data                  | ```<function><input>/<output><format>```
 edam:Operation               | Basic operation / method        | ```<function><operation>```
-biotools:RelatedResource     | Link, download or documentation | ```<link>|<download>/<documentation>```
+biotools:RelatedResource     | Link, download or documentation | ```<link>/<download>/<documentation>```
 biotools:RelatedResourceType | Type of related resource        | (see below)
 biotools:Credit              | Credis of the software          | ```<credit>```
 biotools:CreditType          | Type of credit                  | (see below)
