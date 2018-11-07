@@ -39,10 +39,10 @@ biotools:RelatedResourceType |
 subclasses of biotools:RelatedResourceType:
 
 class                        | description
----------------------------- | ----------------------------------------------------------------
-biotools:LinkType            | Type of link (subclass of biotools:RelatedResourceType)
-biotools:DownloadType        | Type of download (subclass of biotools:RelatedResourceType)
-biotools:DocumentationType   | Type of documentation (subclass of biotools:RelatedResourceType)
+---------------------------- | ---------------------
+biotools:LinkType            | Type of link 
+biotools:DownloadType        | Type of download
+biotools:DocumentationType   | Type of documentation
 
 
 
