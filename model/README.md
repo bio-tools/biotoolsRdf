@@ -6,7 +6,7 @@ biotoolsRDF is fully compatible with biotoolsSchema and thus [bio.tools](https:/
 biotoolsRDF is a lightweight ontology and re-uses other well established vocabularies wherever possible.
 
 # Namespaces
-biotoolsRDF uses classes and properties from the following vocabularies.
+biotoolsRDF uses classes and properties from the following vocabularies:
 
 prefix   | namespace IRI                               | definition
 -------- | ------------------------------------------- | ----------
@@ -20,12 +20,38 @@ dc       | http://purl.org/dc/elements/1.1/            | The [Dublin Core Metada
 dcmitype | http://purl.org/dc/dcmitype/                | Classes in the [DCMI Type Vocabulary](http://dublincore.org/documents/dcmi-type-vocabulary/)
 
 
+# Classes
+biotoolsRDF uses the following classes:
+
+class                        | description
+---------------------------- | -----------
+biotools:Tool                | 
+biotools:Function            |
+biotools:Data                |
+edam:Data                    |
+edam:Format                  |
+edam:Operation               |
+xsd:token                    |
+xsd:anyURI                   |   
+biotools:RelatedResource     |
+biotools:RelatedResourceType |
+
+*biotools:RelatedResourceType subclasses*
+
+---------------------------- | ---------------------------------------------------------------
+biotools:LinkType            | Type of link (subclass of biotools:RelatedResourceType)
+biotools:DownloadType        | Type of download (subclass of biotools:RelatedResourceType)
+biotools:DocumentationType   | Type of documentation (subclass of biotools:RelatedResourceType)
+
+
+
+
 ## biotools:Function
 
-![biotools:Function and biotools:Data](images/Function.PNG)
+![biotools:Function:Data](images/Function.PNG)
 
 
-property              | value         | biotoolsSchema
+property              | value          | biotoolsSchema
 --------------------- | -------------- | ---------------------
 biotools:hasInput     | biotools:Data  | ```<function><input>```
 biotools:hasOperation | edam:Operation | ```<function><operation>```
@@ -39,4 +65,17 @@ property               | value       | biotoolsSchema
 ---------------------- | ----------- | ----------------------------------
 biotools:hasDataType   | edam:Data   | <function><input>|<output><Data>
 biotools:hasDataFormat | edam:Format | <function><input>|<output><Format>
+
+
+## biotools:RelatedResource
+
+![biotools:RelatedResource](images/RelatedResource.PNG)
+
+property                     | value                        | biotoolsSchema
+---------------------------- | --------------               | ---------------------
+foaf:page                    | xsd:anyURI                   | ```<link><download><documentation><uri>```
+rdfs:comment                 | xsd:token                    | ```<link><download><documentation><note>```
+pov:hasVersion               | xsd:token                    | ```<link><download><documentation><version>```
+dcterms:type                 | biotools:RelatedResourceType | ```<link><download><documentation><type>```
+
 
