@@ -1,4 +1,9 @@
 # Introduction
+
+https://via.placeholder.com/150/FF0000/FFFFFF?Text=Under contruction - everything may change
+
+
+
 The biotools ontology (biotoolsRDF) defines the OWL2 Web Ontology Language encoding of [biotoolsSchema](https://github.com/bio-tools/biotoolsschema); the resource description model for bioinformatics software.  This document describes the set of classes, properties and restrictions that can be used to represent and interchange information about software provided in different systems and contexts.
 
 biotoolsRDF is fully compatible with biotoolsSchema and thus [bio.tools](https://github.com/bio-tools/biotoolsregistry/); the registry of bioinformatics software resources (https:bio.tools) provided by [ELIXIR](https://www.elixir-europe.org/).
@@ -141,7 +146,7 @@ biotools:accessibility          | biotools:Accessibility    | ```<labels><access
 biotools:elixirCredit           | biotools:ElixirCredit     | ```<labels><elixirNode>/<elixirPlatform>```
 biotools:hasOtherId             | biotools:OtherId          | ```<summary><otherID>```
 biotools:hasFunction            | biotools:Function         | ```<function>```
-biotools:hasRelatedResource (3) | biotools:RelatedResource  | ```<function>```
+biotools:hasRelatedResource (3) | biotools:RelatedResource  | ```<link>/<download>/<documentation>```
 
 
 
