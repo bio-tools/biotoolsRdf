@@ -39,17 +39,17 @@ edam:Data                    | Type of data                    | ```<function><i
 edam:Format                  | Format of data                  | ```<function><input>/<output><format>```
 edam:Operation               | Basic operation / method        | ```<function><operation>```
 biotools:RelatedResource     | Link, download or documentation | ```<link>/<download>/<documentation>```
-biotools:RelatedResourceType | Type of related resource        | (see below)
+biotools:RelatedResourceType | Type of related resource        | *see below*
 biotools:Credit              | Credis of the software          | ```<credit>```
-biotools:CreditType          | Type of credit                  | (see below)
-biotools:ElixirCredit        | ELIXIR credit                   | (see below)
+biotools:CreditType          | Type of credit                  | *see below*
+biotools:ElixirCredit        | ELIXIR credit                   | *see below*
 biotools:Publication         | Publication about the software  | ```<publication>```
 biotools:PublicationType     | Type of publication             | ```<publication><type>```
 xsd:token                    | String (with restrictions)      | - 
 xsd:anyURI                   | URI                             | - 
 
 
-subclasses of biotools:RelatedResourceType:
+## Subclasses of biotools:RelatedResourceType:
 
 class                        | description           | biotoolsSchema
 ---------------------------- | --------------------- | --------------
@@ -58,19 +58,60 @@ biotools:DownloadType        | Type of download      | ```<download><type>```
 biotools:DocumentationType   | Type of documentation | ```<documentation><type>```
 
 
-subclasses of biotools:CreditType:
+## Subclasses of biotools:CreditType:
 
 class                        | description             | biotoolsSchema
 ---------------------------- | ----------------------- | --------------
 biotools:CreditTypeEntity    | Type of credited entity | ```<credit><typeEntity>```
 biotools:CreditTypeRole      | Role of credited entity | ```<credit><typeRole>```
 
-subclasses of biotools:ElixirCredit:
+## Subclasses of biotools:ElixirCredit:
 
 class                        | description              | biotoolsSchema
 ---------------------------- | ------------------------ | --------------
 biotools:ElixirNode          | ELIXIR national node     | ```<labels><elixirNode>```
 biotools:ElixirPlatform      | ELIXIR technial platform | ```<labels><elixirPlatform>```
+
+
+# Properties
+biotoolsRDF uses the following properties:
+
+property                    | note
+---------------------       | --------------   
+biotools:accessibility      | Tool has an accessibility tag
+biotools:collectionId       | Tool has assignment to some collection in bio.tools
+biotools:cost               | Tool has a monetary cost
+biotools:elixirCredit       | Tool has a credited entity
+biotools:hasFunction        | Tool has a function/mode of operating
+biotools:hasInput           | Tool function/mode has an input
+biotools:hasOperation       | Tool function/mode performs some specific operation 
+biotools:hasOtherId         | Tool has an identifier (normally other than biotools ID)
+biotools:hasOutput          | Tool function/mode has an output
+biotools:hasRelatedResource | Tool has a related resource (link, download or documentation)
+biotools:maturity           | Tool has assocatited product maturity level
+biotools:operatingSystem    | Tool has supported operating system
+biotools:cmd                | Tool function/mode has pertinent command-line fragment
+biotools:hasDataType        | Input or output is of a certain data type
+biotools:hasDataFormat      | Input or output supported in a certain data format
+dcterms:description         | Tool has a textual description
+dcterms:identifier          | Misc entity has some identifier value
+dcterms:language            | Tool has a relevant programming languages(s)
+dcterms:license             | Tool has a software or data usage license
+dcterms:subject             | Tool has a relevant EDAM topic
+dcterms:title               | Tool has a name
+dcterms:type                | Misc entity has tags from controlled vocabulary
+foaf:name                   | Misc entity has a name
+foaf:mbox                   | Credited entity has an email address
+foaf:page                   | Misc. entity has a URL
+pov:hasVersion              | Misc. entity has an associated version number
+rdfs:comment                | Misc. entity has an associated note
+
+
+
+
+
+
+
 
 
 
