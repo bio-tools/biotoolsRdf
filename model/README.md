@@ -27,7 +27,7 @@ dcmitype | http://purl.org/dc/dcmitype/                | Classes in the [DCMI Ty
 
 property              | object         | biotoolsSchema
 --------------------- | -------------- | ---------------------
-biotools:hasInput     | biotools:Data  | <function><input>
+biotools:hasInput     | biotools:Data  | ```<function><input>```
 biotools:hasOperation | edam:Operation | <function><operation>
 biotools:hasOutput    | biotools:Data  | <function><output>
 biotools:cmd          | xsd:token      | <function><cmd>
