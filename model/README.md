@@ -25,17 +25,17 @@ dcmitype | http://purl.org/dc/dcmitype/                | Classes in the [DCMI Ty
 ![biotools:Function and biotools:Data](images/Function.PNG)
 
 
-property              | object         | biotoolsSchema
+property              | value         | biotoolsSchema
 --------------------- | -------------- | ---------------------
 biotools:hasInput     | biotools:Data  | ```<function><input>```
-biotools:hasOperation | edam:Operation | <function><operation>
-biotools:hasOutput    | biotools:Data  | <function><output>
-biotools:cmd          | xsd:token      | <function><cmd>
-rdfs:comment          | xsd:token      | <function><note>
+biotools:hasOperation | edam:Operation | ```<function><operation>```
+biotools:hasOutput    | biotools:Data  | ```<function><output>```
+biotools:cmd          | xsd:token      | ```<function><cmd>```
+rdfs:comment          | xsd:token      | ```<function><note>```
 
 ## biotools:Data
 
-property               | object      | biotoolsSchema
+property               | value       | biotoolsSchema
 ---------------------- | ----------- | ----------------------------------
 biotools:hasDataType   | edam:Data   | <function><input>|<output><Data>
 biotools:hasDataFormat | edam:Format | <function><input>|<output><Format>
