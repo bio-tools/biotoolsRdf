@@ -36,9 +36,10 @@ xsd:anyURI                   |
 biotools:RelatedResource     |
 biotools:RelatedResourceType |
 
-*biotools:RelatedResourceType subclasses*
+subclasses of biotools:RelatedResourceType:
 
----------------------------- | ---------------------------------------------------------------
+class                        | description
+---------------------------- | ----------------------------------------------------------------
 biotools:LinkType            | Type of link (subclass of biotools:RelatedResourceType)
 biotools:DownloadType        | Type of download (subclass of biotools:RelatedResourceType)
 biotools:DocumentationType   | Type of documentation (subclass of biotools:RelatedResourceType)
