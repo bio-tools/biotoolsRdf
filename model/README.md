@@ -23,28 +23,36 @@ dcmitype | http://purl.org/dc/dcmitype/                | Classes in the [DCMI Ty
 # Classes
 biotoolsRDF uses the following classes:
 
-class                        | description
----------------------------- | -----------
-biotools:Tool                | 
-biotools:Function            |
-biotools:Data                |
-edam:Data                    |
-edam:Format                  |
-edam:Operation               |
-xsd:token                    |
-xsd:anyURI                   |   
-biotools:RelatedResource     |
-biotools:RelatedResourceType |
+class                        | description | biotoolsSchema
+---------------------------- | ----------- | --------------
+biotools:Tool                | |
+biotools:Function            | |
+biotools:Data                | |
+edam:Data                    | |
+edam:Format                  | |
+edam:Operation               | |
+xsd:token                    | |
+xsd:anyURI                   | | 
+biotools:RelatedResource     | |
+biotools:RelatedResourceType | |
+biotools:Credit              | |
+biotools:CreditType          | |
 
 subclasses of biotools:RelatedResourceType:
 
-class                        | description
----------------------------- | ---------------------
-biotools:LinkType            | Type of link 
-biotools:DownloadType        | Type of download
-biotools:DocumentationType   | Type of documentation
+class                        | description           | biotoolsSchema
+---------------------------- | --------------------- | --------------
+biotools:LinkType            | Type of link          |
+biotools:DownloadType        | Type of download      |
+biotools:DocumentationType   | Type of documentation | 
 
 
+subclasses of biotools:CreditType:
+
+class                        | description           | biotoolsSchema
+---------------------------- | --------------------- | --------------
+biotools:CreditTypeEntity    |                       |
+biotools:CreditTypeRole      |                       | 
 
 
 ## biotools:Function
@@ -68,6 +76,7 @@ biotools:hasDataType   | edam:Data   | <function><input>|<output><Data>
 biotools:hasDataFormat | edam:Format | <function><input>|<output><Format>
 
 
+
 ## biotools:RelatedResource
 
 ![biotools:RelatedResource](images/RelatedResource.PNG)
@@ -80,3 +89,16 @@ pov:hasVersion               | xsd:token                    | ```<link><download
 dcterms:type                 | biotools:RelatedResourceType | ```<link><download><documentation><type>```
 
 
+
+## biotools:Credit
+
+![biotools:RelatedResource](images/Credit.PNG)
+
+property                     | value                        | biotoolsSchema
+---------------------------- | --------------               | ---------------------
+foaf:name                    | xsd:token                    | ```<credit><name>```
+foaf:mbox                    | xsd:token                    | ```<credit><email>```
+foaf:page                    | xsd:anyURI                   | ```<credit><url>```
+dcterms:identifier           | xsd:token                    | ```<credit><orcidid>```
+rdfs:comment                 | xsd:token                    | ```<credit><note>```
+dcterms:type                 | biotools:CreditType          | ```<credit><typeEntity>|<typeRole>```
