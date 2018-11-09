@@ -37,11 +37,11 @@ biotools:Maturity            | Software development stage      | ```<labels><mat
 biotools:OtherId             | Software unique identifier      | ```<summary><otherID>```
 biotools:OtherIdType         | Type of software identifier     | ```<summary><otherID><type>```
 biotools:Function            | Software function / mode        | ```<function>```
-biotools:Data                | Input or output data            | ```<function><input>/<output>```
-edam:Data                    | Type of data                    | ```<function><input>/<output><data>```
-edam:Format                  | Format of data                  | ```<function><input>/<output><format>```
+biotools:Data                | Input or output data            | ```<function><input>\|<output>```
+edam:Data                    | Type of data                    | ```<function><input>\|<output><data>```
+edam:Format                  | Format of data                  | ```<function><input>\|<output><format>```
 edam:Operation               | Basic operation / method        | ```<function><operation>```
-biotools:RelatedResource     | Link, download or documentation | ```<link>/<download>/<documentation>```
+biotools:RelatedResource     | Link, download or documentation | ```<link>\|<download>\|<documentation>```
 biotools:RelatedResourceType | Type of related resource        | *see below*
 biotools:Credit              | Credis of the software          | ```<credit>```
 biotools:CreditType          | Type of credit                  | *see below*
@@ -141,10 +141,10 @@ biotools:collectionId           | xsd:token                 | ```<labels><collec
 biotools:maturity               | biotools:Maturity         | ```<labels><maturity>```
 biotools:cost                   | biotools:Cost             | ```<labels><cost>```
 biotools:accessibility          | biotools:Accessibility    | ```<labels><accessibility>```
-biotools:elixirCredit           | biotools:ElixirCredit     | ```<labels><elixirNode>/<elixirPlatform>```
+biotools:elixirCredit           | biotools:ElixirCredit     | ```<labels><elixirNode>\|<elixirPlatform>```
 biotools:hasOtherId             | biotools:OtherId          | ```<summary><otherID>```
 biotools:hasFunction            | biotools:Function         | ```<function>```
-biotools:hasRelatedResource (3) | biotools:RelatedResource  | ```<link>/<download>/<documentation>```
+biotools:hasRelatedResource (3) | biotools:RelatedResource  | ```<link>\|<download>\|<documentation>```
 
 
 
@@ -182,8 +182,8 @@ rdfs:comment          | xsd:token      | ```<function><note>```
 
 property               | value       | biotoolsSchema
 ---------------------- | ----------- | ----------------------------------
-biotools:hasDataType   | edam:Data   | ```<function><input>/<output><Data>```
-biotools:hasDataFormat | edam:Format | ```<function><input>/<output><Format>```
+biotools:hasDataType   | edam:Data   | ```<function><input>\|<output><Data>```
+biotools:hasDataFormat | edam:Format | ```<function><input>\|<output><Format>```
 
 
 
@@ -193,10 +193,10 @@ biotools:hasDataFormat | edam:Format | ```<function><input>/<output><Format>```
 
 property                     | value                        | biotoolsSchema
 ---------------------------- | --------------               | ---------------------
-foaf:page                    | xsd:anyURI                   | ```<link>/<download>/<documentation><uri>```
-rdfs:comment                 | xsd:token                    | ```<link>/<download>/<documentation><note>```
-pov:hasVersion               | xsd:token                    | ```<link>/<download>/<documentation><version>```
-dcterms:type                 | biotools:RelatedResourceType | ```<link>/<download>/<documentation><type>```
+foaf:page                    | xsd:anyURI                   | ```<link>\|<download>\|<documentation><uri>```
+rdfs:comment                 | xsd:token                    | ```<link>\|<download>\|<documentation><note>```
+pov:hasVersion               | xsd:token                    | ```<link>\|<download>\|<documentation><version>```
+dcterms:type                 | biotools:RelatedResourceType | ```<link>\|<download>\|<documentation><type>```
 
 
 
@@ -211,7 +211,7 @@ foaf:mbox                    | xsd:token                    | ```<credit><email>
 foaf:page                    | xsd:anyURI                   | ```<credit><url>```
 dcterms:identifier           | xsd:token                    | ```<credit><orcidid>```
 rdfs:comment                 | xsd:token                    | ```<credit><note>```
-dcterms:type                 | biotools:CreditType          | ```<credit><typeEntity>/<typeRole>```
+dcterms:type                 | biotools:CreditType          | ```<credit><typeEntity>\|<typeRole>```
 
 
 
