@@ -43,7 +43,7 @@ edam:Format                  | Format of data                  | ```<function><i
 edam:Operation               | Basic operation / method        | ```<function><operation>```
 biotools:RelatedResource     | Link, download or documentation | ```<link>\|<download>\|<documentation>```
 biotools:RelatedResourceType | Type of related resource        | *see below*
-biotools:Credit              | Credis of the software          | ```<credit>```
+biotools:Credit              | Credit of the software          | ```<credit>```
 biotools:CreditType          | Type of credit                  | *see below*
 biotools:ElixirCredit        | ELIXIR credit                   | *see below*
 biotools:Publication         | Publication about the software  | ```<publication>```
@@ -70,10 +70,10 @@ biotools:CreditTypeRole      | Role of credited entity | ```<credit><typeRole>``
 
 ## Subclasses of biotools:ElixirCredit
 
-class                        | description              | biotoolsSchema
----------------------------- | ------------------------ | --------------
-biotools:ElixirNode          | ELIXIR national node     | ```<labels><elixirNode>```
-biotools:ElixirPlatform      | ELIXIR technial platform | ```<labels><elixirPlatform>```
+class                        | description               | biotoolsSchema
+---------------------------- | ------------------------- | --------------
+biotools:ElixirNode          | ELIXIR national node      | ```<labels><elixirNode>```
+biotools:ElixirPlatform      | ELIXIR technical platform | ```<labels><elixirPlatform>```
 
 
 # Properties

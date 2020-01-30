@@ -1,0 +1,766 @@
+<?xml version="1.0"?>
+
+ 
+<!DOCTYPE rdf:RDF [
+    <!ENTITY biotoolsRDF "http://biotoolsRDF.org/" >
+    <!ENTITY edam "http://edamontology.org#" >
+    <!ENTITY edamontology "http://edamontology.org/" >
+    <!ENTITY dcterms "http://purl.org/dc/terms/" >
+    <!ENTITY prov "http://www.w3.org/ns/prov#" >
+    <!ENTITY foaf "http://xmlns.com/foaf/0.1/" >
+    <!ENTITY dcmitype "http://purl.org/dc/dcmitype/" >
+    <!ENTITY doap "http://usefulinc.com/ns/doap#" >
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY oboOther "http://purl.obolibrary.org/obo/" >
+    <!ENTITY dc "http://purl.org/dc/elements/1.1/" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY edam2 "http://purl.obolibrary.org/obo/edam#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY oboInOwl "http://www.geneontology.org/formats/oboInOwl#" >
+]>
+
+
+<rdf:RDF xmlns="http://biotoolsRDF.org/"
+     xml:base="http://biotoolsRDF.org/"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:edamontology="http://edamontology.org/"
+     xmlns:prov="http://www.w3.org/ns/prov#"
+     xmlns:foaf="http://xmlns.com/foaf/0.1/"
+     xmlns:dcmitype="http://purl.org/dc/dcmitype/"
+     xmlns:dcterms="http://purl.org/dc/terms/"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:edam2="&oboOther;edam#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:oboOther="http://purl.obolibrary.org/obo/"
+     xmlns:doap="http://usefulinc.com/ns/doap#"
+     xmlns:oboInOwl="http://www.geneontology.org/formats/oboInOwl#"
+     xmlns:edam="http://edamontology.org#">
+    <owl:Ontology rdf:about="http://biotoolsRDF.org">
+        <doap:Version rdf:datatype="&xsd;decimal">1.0</doap:Version>
+        <oboOther:date rdf:datatype="&xsd;string">14.01.2020 13:23 UTC</oboOther:date>
+        <dc:creator>Jon Ison</dc:creator>
+        <dc:creator>Alban Gaignard</dc:creator>
+        <oboInOwl:savedBy>Jon Ison</oboInOwl:savedBy>
+        <oboOther:remark>The biotools ontology (biotoolsRDF) defines the OWL2 Web Ontology Language encoding of biotoolsSchema; the resource description model for bioinformatics software. This document describes the set of classes, properties and restrictions that can be used to represent and interchange information about software provided in different systems and contexts.</oboOther:remark>
+        <dc:format>application/rdf+xml</dc:format>
+        <dc:title>Resource description model for bioinformatics software based on bio.tools..</dc:title>
+        <oboOther:idspace>biotoolsRDF http://biotoolsRDF.org/ &quot;biotoolsRDF relations and concept properties&quot;</oboOther:idspace>
+        <oboOther:remark>EDAM editors: Jon Ison, Alban Gaignard. Contributors: see https://github.com/bio-tools/biotoolsRdf/contributors.md. License: see https://github.com/bio-tools/biotoolsRdf/license.md.</oboOther:remark>
+        <rdfs:isDefinedBy rdf:resource="http://biotoolsRDF.org/biotoolsRDF.owl"/>
+        <foaf:page rdf:resource="&edamontology;page"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://biotoolsRDF.org/created_in -->
+
+    <owl:AnnotationProperty rdf:about="http://biotoolsRDF.org/created_in"/>
+    
+
+
+    <!-- http://edamontology.org/created_in -->
+
+    <owl:AnnotationProperty rdf:about="&edamontology;created_in">
+        <rdfs:label>Created in</rdfs:label>
+        <oboInOwl:hasDefinition>Version in which a concept was created.</oboInOwl:hasDefinition>
+        <oboOther:is_metadata_tag>true</oboOther:is_metadata_tag>
+        <oboInOwl:inSubset>concept_properties</oboInOwl:inSubset>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://edamontology.org/deprecation_comment -->
+
+    <owl:AnnotationProperty rdf:about="&edamontology;deprecation_comment">
+        <rdfs:label>deprecation_comment</rdfs:label>
+        <oboOther:is_metadata_tag>true</oboOther:is_metadata_tag>
+        <oboInOwl:inSubset>concept_properties</oboInOwl:inSubset>
+        <oboInOwl:hasDefinition>A comment explaining why the comment should be or was deprecated, including name of person commenting (jison, mkalas etc.)</oboInOwl:hasDefinition>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://edamontology.org/obsolete_since -->
+
+    <owl:AnnotationProperty rdf:about="&edamontology;obsolete_since">
+        <rdfs:label>Obsolete since</rdfs:label>
+        <oboOther:is_metadata_tag>true</oboOther:is_metadata_tag>
+        <oboInOwl:inSubset>concept_properties</oboInOwl:inSubset>
+        <oboInOwl:hasDefinition>Version in which a concept was made obsolete.</oboInOwl:hasDefinition>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://edamontology.org/oldParent -->
+
+    <owl:AnnotationProperty rdf:about="&edamontology;oldParent">
+        <rdfs:label>Old parent</rdfs:label>
+        <oboOther:is_metadata_tag>true</oboOther:is_metadata_tag>
+        <oboInOwl:inSubset>concept_properties</oboInOwl:inSubset>
+        <oboInOwl:hasDefinition>EDAM concept URI of the erstwhile &quot;parent&quot; of a now deprecated concept.</oboInOwl:hasDefinition>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://edamontology.org/oldRelated -->
+
+    <owl:AnnotationProperty rdf:about="&edamontology;oldRelated">
+        <rdfs:label>Old related</rdfs:label>
+        <oboOther:is_metadata_tag>true</oboOther:is_metadata_tag>
+        <oboInOwl:hasDefinition>EDAM concept URI of an erstwhile related concept (by has_input, has_output, has_topic, is_format_of, etc.) of a now deprecated concept.</oboInOwl:hasDefinition>
+        <oboInOwl:inSubset>concept_properties</oboInOwl:inSubset>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://edamontology.org/refactor_comment -->
+
+    <owl:AnnotationProperty rdf:about="&edamontology;refactor_comment">
+        <rdfs:label>refactor_comment</rdfs:label>
+        <oboOther:is_metadata_tag>true</oboOther:is_metadata_tag>
+        <oboInOwl:hasDefinition>A comment explaining the proposed refactoring, including name of person commenting (jison, mkalas etc.)</oboInOwl:hasDefinition>
+        <oboInOwl:inSubset>concept_properties</oboInOwl:inSubset>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/date -->
+
+    <owl:AnnotationProperty rdf:about="&oboOther;date"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/idspace -->
+
+    <owl:AnnotationProperty rdf:about="&oboOther;idspace"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/is_anti_symmetric -->
+
+    <owl:AnnotationProperty rdf:about="&oboOther;is_anti_symmetric"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/is_metadata_tag -->
+
+    <owl:AnnotationProperty rdf:about="&oboOther;is_metadata_tag"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/is_reflexive -->
+
+    <owl:AnnotationProperty rdf:about="&oboOther;is_reflexive"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/is_symmetric -->
+
+    <owl:AnnotationProperty rdf:about="&oboOther;is_symmetric"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/namespace -->
+
+    <owl:AnnotationProperty rdf:about="&oboOther;namespace"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/remark -->
+
+    <owl:AnnotationProperty rdf:about="&oboOther;remark"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/transitive_over -->
+
+    <owl:AnnotationProperty rdf:about="&oboOther;transitive_over"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/edam#obsolete -->
+
+    <owl:AnnotationProperty rdf:about="&oboOther;edam#obsolete">
+        <rdfs:subPropertyOf rdf:resource="&oboInOwl;SubsetProperty"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/contributor -->
+
+    <owl:AnnotationProperty rdf:about="&dc;contributor"/>
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/creator -->
+
+    <owl:AnnotationProperty rdf:about="&dc;creator"/>
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/format -->
+
+    <owl:AnnotationProperty rdf:about="&dc;format"/>
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/title -->
+
+    <owl:AnnotationProperty rdf:about="&dc;title"/>
+    
+
+
+    <!-- http://usefulinc.com/ns/doap#Version -->
+
+    <owl:AnnotationProperty rdf:about="&doap;Version"/>
+    
+
+
+    <!-- http://www.geneontology.org/formats/oboInOwl#SubsetProperty -->
+
+    <owl:AnnotationProperty rdf:about="&oboInOwl;SubsetProperty"/>
+    
+
+
+    <!-- http://www.geneontology.org/formats/oboInOwl#comment -->
+
+    <owl:AnnotationProperty rdf:about="&oboInOwl;comment"/>
+    
+
+
+    <!-- http://www.geneontology.org/formats/oboInOwl#hasDbXref -->
+
+    <owl:AnnotationProperty rdf:about="&oboInOwl;hasDbXref"/>
+    
+
+
+    <!-- http://www.geneontology.org/formats/oboInOwl#hasDefinition -->
+
+    <owl:AnnotationProperty rdf:about="&oboInOwl;hasDefinition"/>
+    
+
+
+    <!-- http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym -->
+
+    <owl:AnnotationProperty rdf:about="&oboInOwl;hasRelatedSynonym"/>
+    
+
+
+    <!-- http://www.geneontology.org/formats/oboInOwl#inSubset -->
+
+    <owl:AnnotationProperty rdf:about="&oboInOwl;inSubset"/>
+    
+
+
+    <!-- http://www.geneontology.org/formats/oboInOwl#isCyclic -->
+
+    <owl:AnnotationProperty rdf:about="&oboInOwl;isCyclic"/>
+    
+
+
+    <!-- http://www.geneontology.org/formats/oboInOwl#savedBy -->
+
+    <owl:AnnotationProperty rdf:about="&oboInOwl;savedBy"/>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/page -->
+
+    <owl:AnnotationProperty rdf:about="&foaf;page"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+
+    <!-- http://purl.org/dc/terms/type -->
+
+    <owl:ObjectProperty rdf:about="&dcterms;type">
+        <rdfs:label>Type</rdfs:label>
+        <oboInOwl:hasDefinition>Defines a tool (biotoolsRDF:Tool) to be of a certain type (biotoolsRDF:ToolType).</oboInOwl:hasDefinition>
+        <oboInOwl:inSubset>relations</oboInOwl:inSubset>
+        <rdfs:range rdf:resource="&biotoolsRDF;ToolType"/>
+        <rdfs:domain rdf:resource="&biotoolsRDF;Tool"/>
+    </owl:ObjectProperty>
+    <owl:Axiom>
+        <rdfs:comment>Is defined anywhere? Not in the &apos;unknown&apos; version of RO. &apos;OBO_REL:quality_of&apos; might be seen narrower in the sense that it only relates subjects that are a &apos;quality&apos; (snap:Quality) with objects that are an &apos;independent_continuant&apos; (snap:IndependentContinuant), and is broader in the sense that it relates any qualities of the object.</rdfs:comment>
+        <owl:annotatedTarget>OBO_REL:quality_of</owl:annotatedTarget>
+        <owl:annotatedSource rdf:resource="&edamontology;is_format_of"/>
+        <owl:annotatedProperty rdf:resource="&oboInOwl;hasRelatedSynonym"/>
+    </owl:Axiom>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://biotoolsRDF.org#CreditTypeEntity -->
+
+    <owl:Class rdf:about="http://biotoolsRDF.org#CreditTypeEntity">
+        <rdfs:label>Credited entity type</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://biotoolsRDF.org/CreditType"/>
+        <oboInOwl:hasDefinition>Type of credited entity.</oboInOwl:hasDefinition>
+        <created_in>1.0</created_in>
+    </owl:Class>
+    
+
+
+    <!-- http://biotoolsRDF.org#CreditTypeRole -->
+
+    <owl:Class rdf:about="http://biotoolsRDF.org#CreditTypeRole">
+        <rdfs:label>Credited entity role</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://biotoolsRDF.org/CreditType"/>
+        <created_in>1.0</created_in>
+        <oboInOwl:hasDefinition>Role of credited entity.</oboInOwl:hasDefinition>
+    </owl:Class>
+    
+
+
+    <!-- http://biotoolsRDF.org#DocumentationType -->
+
+    <owl:Class rdf:about="http://biotoolsRDF.org#DocumentationType">
+        <rdfs:label>Documentation type</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://biotoolsRDF.org/RelatedResourceType"/>
+        <created_in>1.0</created_in>
+        <oboInOwl:hasDefinition>Type of documentation.</oboInOwl:hasDefinition>
+    </owl:Class>
+    
+
+
+    <!-- http://biotoolsRDF.org#DownloadType -->
+
+    <owl:Class rdf:about="http://biotoolsRDF.org#DownloadType">
+        <rdfs:label>Download type</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://biotoolsRDF.org/RelatedResourceType"/>
+        <oboInOwl:hasDefinition>Type of download.</oboInOwl:hasDefinition>
+        <created_in>1.0</created_in>
+    </owl:Class>
+    
+
+
+    <!-- http://biotoolsRDF.org#ElixirNode -->
+
+    <owl:Class rdf:about="http://biotoolsRDF.org#ElixirNode">
+        <rdfs:label>ELIXIR node</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://biotoolsRDF.org/ElixirCredit"/>
+        <oboInOwl:hasDefinition>ELIXIR national node.</oboInOwl:hasDefinition>
+        <created_in>1.0</created_in>
+    </owl:Class>
+    
+
+
+    <!-- http://biotoolsRDF.org#ElixirPlatform -->
+
+    <owl:Class rdf:about="http://biotoolsRDF.org#ElixirPlatform">
+        <rdfs:label>ELIXIR platform</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://biotoolsRDF.org/ElixirCredit"/>
+        <oboInOwl:hasDefinition>ELIXIR technical platform.</oboInOwl:hasDefinition>
+        <created_in>1.0</created_in>
+    </owl:Class>
+    
+
+
+    <!-- http://biotoolsRDF.org#LinkType -->
+
+    <owl:Class rdf:about="http://biotoolsRDF.org#LinkType">
+        <rdfs:label>Link type</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://biotoolsRDF.org/RelatedResourceType"/>
+        <oboInOwl:hasDefinition>Type of link.</oboInOwl:hasDefinition>
+        <created_in>1.0</created_in>
+    </owl:Class>
+    
+
+
+    <!-- http://biotoolsRDF.org/Credit -->
+
+    <owl:Class rdf:about="http://biotoolsRDF.org/Credit">
+        <rdfs:label>Credit</rdfs:label>
+        <oboInOwl:hasDefinition>Credis of the software.</oboInOwl:hasDefinition>
+        <created_in>1.0</created_in>
+    </owl:Class>
+    
+
+
+    <!-- http://biotoolsRDF.org/CreditType -->
+
+    <owl:Class rdf:about="http://biotoolsRDF.org/CreditType">
+        <rdfs:label>Credit type</rdfs:label>
+        <oboInOwl:hasDefinition>Type of credit.</oboInOwl:hasDefinition>
+        <created_in>1.0</created_in>
+    </owl:Class>
+    
+
+
+    <!-- http://biotoolsRDF.org/Data -->
+
+    <owl:Class rdf:about="http://biotoolsRDF.org/Data">
+        <rdfs:label>Data</rdfs:label>
+        <created_in>1.0</created_in>
+        <oboInOwl:hasDefinition>Input or output data.</oboInOwl:hasDefinition>
+    </owl:Class>
+    
+
+
+    <!-- http://biotoolsRDF.org/ElixirCredit -->
+
+    <owl:Class rdf:about="http://biotoolsRDF.org/ElixirCredit">
+        <rdfs:label>ELIXIR credit</rdfs:label>
+        <created_in>1.0</created_in>
+        <oboInOwl:hasDefinition>ELIXIR credit.</oboInOwl:hasDefinition>
+    </owl:Class>
+    
+
+
+    <!-- http://biotoolsRDF.org/Function -->
+
+    <owl:Class rdf:about="http://biotoolsRDF.org/Function">
+        <rdfs:label>Function</rdfs:label>
+        <oboInOwl:hasDefinition>Software function / mode.</oboInOwl:hasDefinition>
+        <created_in>1.0</created_in>
+    </owl:Class>
+    
+
+
+    <!-- http://biotoolsRDF.org/Language -->
+
+    <owl:Class rdf:about="http://biotoolsRDF.org/Language">
+        <rdfs:label>Language</rdfs:label>
+        <oboInOwl:hasDefinition>Programming language.</oboInOwl:hasDefinition>
+        <created_in>1.0</created_in>
+    </owl:Class>
+    
+
+
+    <!-- http://biotoolsRDF.org/License -->
+
+    <owl:Class rdf:about="http://biotoolsRDF.org/License">
+        <rdfs:label>License</rdfs:label>
+        <created_in>1.0</created_in>
+        <oboInOwl:hasDefinition>Software or data usage license.</oboInOwl:hasDefinition>
+    </owl:Class>
+    
+
+
+    <!-- http://biotoolsRDF.org/Maturity -->
+
+    <owl:Class rdf:about="http://biotoolsRDF.org/Maturity">
+        <rdfs:label>Maturity</rdfs:label>
+        <created_in>1.0</created_in>
+        <oboInOwl:hasDefinition>Software development stage.</oboInOwl:hasDefinition>
+    </owl:Class>
+    
+
+
+    <!-- http://biotoolsRDF.org/OperatingSystem -->
+
+    <owl:Class rdf:about="http://biotoolsRDF.org/OperatingSystem">
+        <rdfs:label>Operating system</rdfs:label>
+        <oboInOwl:hasDefinition>Supported operating system.</oboInOwl:hasDefinition>
+        <created_in>1.0</created_in>
+    </owl:Class>
+    
+
+
+    <!-- http://biotoolsRDF.org/OtherId -->
+
+    <owl:Class rdf:about="http://biotoolsRDF.org/OtherId">
+        <rdfs:label>OtherId</rdfs:label>
+        <oboInOwl:hasDefinition>Software unique identifier.</oboInOwl:hasDefinition>
+        <created_in>1.0</created_in>
+    </owl:Class>
+    
+
+
+    <!-- http://biotoolsRDF.org/OtherIdType -->
+
+    <owl:Class rdf:about="http://biotoolsRDF.org/OtherIdType">
+        <rdfs:label>OtherId type</rdfs:label>
+        <created_in>1.0</created_in>
+        <oboInOwl:hasDefinition>Type of software identifier.</oboInOwl:hasDefinition>
+    </owl:Class>
+    
+
+
+    <!-- http://biotoolsRDF.org/Publication -->
+
+    <owl:Class rdf:about="http://biotoolsRDF.org/Publication">
+        <rdfs:label>Publication</rdfs:label>
+        <oboInOwl:hasDefinition>Publication about the software.</oboInOwl:hasDefinition>
+        <created_in>1.0</created_in>
+    </owl:Class>
+    
+
+
+    <!-- http://biotoolsRDF.org/PublicationType -->
+
+    <owl:Class rdf:about="http://biotoolsRDF.org/PublicationType">
+        <rdfs:label>Publication type</rdfs:label>
+        <created_in>1.0</created_in>
+        <oboInOwl:hasDefinition>Type of publication.</oboInOwl:hasDefinition>
+    </owl:Class>
+    
+
+
+    <!-- http://biotoolsRDF.org/RelatedResource -->
+
+    <owl:Class rdf:about="http://biotoolsRDF.org/RelatedResource">
+        <rdfs:label>Related resource</rdfs:label>
+        <created_in>1.0</created_in>
+        <oboInOwl:hasDefinition>Link, download or documentation.</oboInOwl:hasDefinition>
+    </owl:Class>
+    
+
+
+    <!-- http://biotoolsRDF.org/RelatedResourceType -->
+
+    <owl:Class rdf:about="http://biotoolsRDF.org/RelatedResourceType">
+        <rdfs:label>Related resource type</rdfs:label>
+        <created_in>1.0</created_in>
+        <oboInOwl:hasDefinition>Type of related resource.</oboInOwl:hasDefinition>
+    </owl:Class>
+    
+
+
+    <!-- http://biotoolsRDF.org/Tool -->
+
+    <owl:Class rdf:about="http://biotoolsRDF.org/Tool">
+        <rdfs:label>Tool</rdfs:label>
+        <created_in>1.0</created_in>
+        <oboInOwl:hasDefinition>Bioinformatics software.</oboInOwl:hasDefinition>
+    </owl:Class>
+    
+
+
+    <!-- http://biotoolsRDF.org/ToolType -->
+
+    <owl:Class rdf:about="http://biotoolsRDF.org/ToolType">
+        <rdfs:label>Tool type</rdfs:label>
+        <created_in>1.0</created_in>
+        <oboInOwl:hasDefinition>Type of software.</oboInOwl:hasDefinition>
+    </owl:Class>
+    
+
+
+    <!-- http://biotoolsRDF.org#Bioinformatics_portal -->
+
+    <owl:Class rdf:about="http://biotoolsRDF.org#Bioinformatics_portal">
+        <rdfs:label>Bioinformatics portal</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://biotoolsRDF.org/ToolType"/>
+        <oboInOwl:hasDefinition>A web site providing a platform/portal to multiple resources used for research in a focused area, including biological databases, web applications, training resources and so on.</oboInOwl:hasDefinition>
+        <created_in>1.0</created_in>
+    </owl:Class>
+
+
+
+    <!-- http://biotoolsRDF.org#Command_line_tool -->
+
+    <owl:Class rdf:about="http://biotoolsRDF.org#Command_line_tool">
+        <rdfs:label>Command-line tool</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://biotoolsRDF.org/ToolType"/>
+        <oboInOwl:hasDefinition>A tool with a text-based (command-line) interface.</oboInOwl:hasDefinition>
+        <created_in>1.0</created_in>
+    </owl:Class>
+
+
+
+    <!-- http://biotoolsRDF.org#Database_portal -->
+
+    <owl:Class rdf:about="http://biotoolsRDF.org#Database_portal">
+        <rdfs:label>Database portal</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://biotoolsRDF.org/ToolType"/>
+        <oboInOwl:hasDefinition>A Web site providing a portal to a biological database, typically allowing a user to browse, deposit, search, visualise, analyse or download data.</oboInOwl:hasDefinition>
+        <created_in>1.0</created_in>
+    </owl:Class>
+
+
+
+    <!-- http://biotoolsRDF.org#Desktop_application -->
+
+    <owl:Class rdf:about="http://biotoolsRDF.org#Desktop_application">
+        <rdfs:label>Desktop application</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://biotoolsRDF.org/ToolType"/>
+        <oboInOwl:hasDefinition>A tool with a graphical user interface that runs on your desktop environment, e.g. on a PC or mobile device.</oboInOwl:hasDefinition>
+        <created_in>1.0</created_in>
+    </owl:Class>
+
+
+
+    <!-- http://biotoolsRDF.org#Library -->
+
+    <owl:Class rdf:about="http://biotoolsRDF.org#Library">
+        <rdfs:label>Library</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://biotoolsRDF.org/ToolType"/>
+        <oboInOwl:hasDefinition>A collection of components that are used to construct other tools.  bio.tools scope includes component libraries performing high-level bioinformatics functions but excludes lower-level programming libraries.</oboInOwl:hasDefinition>
+        <created_in>1.0</created_in>
+    </owl:Class>
+
+
+
+
+    <!-- http://biotoolsRDF.org#Ontology -->
+
+    <owl:Class rdf:about="http://biotoolsRDF.org#Ontology">
+        <rdfs:label>Ontology</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://biotoolsRDF.org/ToolType"/>
+        <oboInOwl:hasDefinition>A collection of information about concepts, including terms, synonyms, descriptions etc.</oboInOwl:hasDefinition>
+        <created_in>1.0</created_in>
+    </owl:Class>
+
+
+
+    <!-- http://biotoolsRDF.org#Plug_in-->
+
+    <owl:Class rdf:about="http://biotoolsRDF.org#Plug_in">
+        <rdfs:label>Plug-in</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://biotoolsRDF.org/ToolType"/>
+        <oboInOwl:hasDefinition>A software component encapsulating a set of related functions, which are not standalone but depend upon (and typically extend the function of) other software for its use, e.g. a JavaScript widget, plug-in, extension or add-on.</oboInOwl:hasDefinition>
+        <created_in>1.0</created_in>
+    </owl:Class>
+
+
+
+
+    <!-- http://biotoolsRDF.org#Script -->
+
+    <owl:Class rdf:about="http://biotoolsRDF.org#Script">
+        <rdfs:label>Script</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://biotoolsRDF.org/ToolType"/>
+        <oboInOwl:hasDefinition>A tool written for some run-time environment (e.g. other applications or an OS shell) that automates the execution of tasks. Often a small program written in a general-purpose languages (e.g. Perl, Python) or some domain-specific languages (e.g. sed).</oboInOwl:hasDefinition>
+        <created_in>1.0</created_in>
+    </owl:Class>
+
+
+
+    <!-- http://biotoolsRDF.org#SPARQL_endpoint -->
+
+    <owl:Class rdf:about="http://biotoolsRDF.org#SPARQL_endpoint">
+        <rdfs:label>SPARQL endpoint</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://biotoolsRDF.org/ToolType"/>
+        <oboInOwl:hasDefinition>A service that provides queries over an RDF knowledge base via the SPARQL query language and protocol, and returns results via HTTP.</oboInOwl:hasDefinition>
+        <created_in>1.0</created_in>
+    </owl:Class>
+
+
+
+    <!-- http://biotoolsRDF.org#Suite -->
+
+    <owl:Class rdf:about="http://biotoolsRDF.org#Suite">
+        <rdfs:label>Suite</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://biotoolsRDF.org/ToolType"/>
+        <oboInOwl:hasDefinition>A collection of tools which are bundled together into a convenient toolkit.  Such tools typically share related functionality, a common user interface and can exchange data conveniently.  This includes collections of stand-alone command-line tools, or Web applications within a common portal.</oboInOwl:hasDefinition>
+        <created_in>1.0</created_in>
+    </owl:Class>
+
+
+
+
+    <!-- http://biotoolsRDF.org#Web_application -->
+
+    <owl:Class rdf:about="http://biotoolsRDF.org#Web_application">
+        <rdfs:label>Web application</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://biotoolsRDF.org/ToolType"/>
+        <oboInOwl:hasDefinition>A tool with a graphical user interface that runs in your Web browser.</oboInOwl:hasDefinition>
+        <created_in>1.0</created_in>
+    </owl:Class>
+
+
+
+    <!-- http://biotoolsRDF.org#Web_API -->
+
+    <owl:Class rdf:about="http://biotoolsRDF.org#Web_API">
+        <rdfs:label>Web API</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://biotoolsRDF.org/ToolType"/>
+        <oboInOwl:hasDefinition>An application programming interface (API) consisting of endpoints to a request-response message system accessible via HTTP.  Includes everything from simple data-access URLs to RESTful APIs.</oboInOwl:hasDefinition>
+        <created_in>1.0</created_in>
+    </owl:Class>
+
+
+
+
+    <!-- http://biotoolsRDF.org#Web_service -->
+
+    <owl:Class rdf:about="http://biotoolsRDF.org#Web_service">
+        <rdfs:label>Web service</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://biotoolsRDF.org/ToolType"/>
+        <oboInOwl:hasDefinition>An API described in a machine readable form (typically WSDL) providing programmatic access via SOAP over HTTP.</oboInOwl:hasDefinition>
+        <created_in>1.0</created_in>
+    </owl:Class>
+
+
+
+
+    <!-- http://biotoolsRDF.org#Workbench -->
+
+    <owl:Class rdf:about="http://biotoolsRDF.org#Workbench">
+        <rdfs:label>Workbench</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://biotoolsRDF.org/ToolType"/>
+        <oboInOwl:hasDefinition>An application or suite with a graphical user interface, providing an integrated environment for data analysis which includes or may be extended with any number of functions or tools.  Includes workflow systems, platforms, frameworks etc.</oboInOwl:hasDefinition>
+        <created_in>1.0</created_in>
+    </owl:Class>
+
+
+    <!-- http://biotoolsRDF.org#Workflow -->
+
+    <owl:Class rdf:about="http://biotoolsRDF.org#Workflow">
+        <rdfs:label>Workflow</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://biotoolsRDF.org/ToolType"/>
+        <oboInOwl:hasDefinition>A set of tools which have been composed together into a pipeline of some sort.  Such tools are (typically) standalone, but are composed for convenience, for instance for batch execution via some workflow engine or script.</oboInOwl:hasDefinition>
+        <created_in>1.0</created_in>
+    </owl:Class>
+
+
+
+
+
+    <!-- http://edamontology.org/data_0006 -->
+
+    <owl:Class rdf:about="&edamontology;data_0006"/>
+    
+
+
+    <!-- http://edamontology.org/format_1915 -->
+
+    <owl:Class rdf:about="&edamontology;format_1915"/>
+    
+
+
+    <!-- http://www.w3.org/2002/07/owl#DeprecatedClass -->
+
+    <owl:Class rdf:about="&owl;DeprecatedClass"/>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.4.2) http://owlapi.sourceforge.net -->
+
