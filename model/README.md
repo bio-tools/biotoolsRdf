@@ -6,7 +6,7 @@ The biotools ontology (biotoolsRDF) defines the OWL2 Web Ontology Language encod
 
 biotoolsRDF is fully compatible with biotoolsSchema and thus [bio.tools](https://github.com/bio-tools/biotoolsregistry/); the registry of bioinformatics software resources (https:bio.tools) provided by [ELIXIR](https://www.elixir-europe.org/).
 
-biotoolsRDF is a lightweight ontology and re-uses other well established vocabularies wherever possible.
+biotoolsRDF is an *application ontology* and re-uses other well established vocabularies wherever possible, adhering to the [MIREOT guidelines](http://precedings.nature.com/documents/3574/version/1) for concept imports.
 
 # Namespaces
 biotoolsRDF uses classes and properties from the following vocabularies:
@@ -30,6 +30,7 @@ class                        | description                     | biotoolsSchema
 ---------------------------- | ------------------------        | --------------
 biotools:Tool                | Bioinformatics software         | ```<tool>```
 biotools:ToolType            | Type of software                | ```<labels><toolType>```
+biotools:Accessibility       | Software accessibility          | ```<labels><accessibility>```
 biotools:OperatingSystem     | Supported operating system      | ```<labels><operatingSystem>```
 biotools:Language            | Programming language            | ```<labels><language>```
 biotools:License             | Software or data usage license  | ```<labels><license>```
