@@ -75,6 +75,7 @@ class                        | description               | biotoolsSchema
 ---------------------------- | ------------------------- | --------------
 biotools:ElixirNode          | ELIXIR national node      | ```<labels><elixirNode>```
 biotools:ElixirPlatform      | ELIXIR technical platform | ```<labels><elixirPlatform>```
+biotools:ElixirCommunity     | ELIXIR community          | ```<labels><elixirCommunity>```
 
 
 # Properties
@@ -142,7 +143,7 @@ biotools:collectionId           | xsd:token                 | ```<labels><collec
 biotools:maturity               | biotools:Maturity         | ```<labels><maturity>```
 biotools:cost                   | biotools:Cost             | ```<labels><cost>```
 biotools:accessibility          | biotools:Accessibility    | ```<labels><accessibility>```
-biotools:elixirCredit           | biotools:ElixirCredit     | ```<labels><elixirNode>\|<elixirPlatform>```
+biotools:elixirCredit           | biotools:ElixirCredit     | ```<labels><elixirNode>\|<elixirPlatform>\|<elixirCommunity>```
 biotools:hasOtherId             | biotools:OtherId          | ```<summary><otherID>```
 biotools:hasFunction            | biotools:Function         | ```<function>```
 biotools:hasRelatedResource (3) | biotools:RelatedResource  | ```<link>\|<download>\|<documentation>```
@@ -211,6 +212,9 @@ foaf:name                    | xsd:token                    | ```<credit><name>`
 foaf:mbox                    | xsd:token                    | ```<credit><email>```
 foaf:page                    | xsd:anyURI                   | ```<credit><url>```
 dcterms:identifier           | xsd:token                    | ```<credit><orcidid>```
+dcterms:identifier           | xsd:token                    | ```<credit><gridid>```
+dcterms:identifier           | xsd:token                    | ```<credit><rorid>```
+dcterms:identifier           | xsd:token                    | ```<credit><fundrefid>```
 rdfs:comment                 | xsd:token                    | ```<credit><note>```
 dcterms:type                 | biotools:CreditType          | ```<credit><typeEntity>\|<typeRole>```
 
