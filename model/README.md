@@ -29,14 +29,14 @@ biotoolsRDF uses the following classes:
 class                        | description                     | biotoolsSchema
 ---------------------------- | ------------------------        | --------------
 biotools:Tool                | Bioinformatics software         | ```<tool>```
-biotools:ToolType            | Type of software                | ```<labels><toolType>```
-biotools:Accessibility       | Software accessibility          | ```<labels><accessibility>```
-biotools:OperatingSystem     | Supported operating system      | ```<labels><operatingSystem>```
-biotools:Language            | Programming language            | ```<labels><language>```
-biotools:License             | Software or data usage license  | ```<labels><license>```
-biotools:Maturity            | Software development stage      | ```<labels><maturity>```
-biotools:OtherId             | Software unique identifier      | ```<summary><otherID>```
-biotools:OtherIdType         | Type of software identifier     | ```<summary><otherID><type>```
+biotools:ToolType            | Type of software                | ```<toolType>```
+biotools:Accessibility       | Software accessibility          | ```<accessibility>```
+biotools:OperatingSystem     | Supported operating system      | ```<operatingSystem>```
+biotools:Language            | Programming language            | ```<language>```
+biotools:License             | Software or data usage license  | ```<license>```
+biotools:Maturity            | Software development stage      | ```<maturity>```
+biotools:OtherId             | Software unique identifier      | ```<otherID>```
+biotools:OtherIdType         | Type of software identifier     | ```<otherID><type>```
 biotools:Function            | Software function / mode        | ```<function>```
 biotools:Data                | Input or output data            | ```<function><input>\|<output>```
 edam:Data                    | Type of data                    | ```<function><input>\|<output><data>```
@@ -73,9 +73,9 @@ biotools:CreditTypeRole      | Role of credited entity | ```<credit><typeRole>``
 
 class                        | description               | biotoolsSchema
 ---------------------------- | ------------------------- | --------------
-biotools:ElixirNode          | ELIXIR national node      | ```<labels><elixirNode>```
-biotools:ElixirPlatform      | ELIXIR technical platform | ```<labels><elixirPlatform>```
-biotools:ElixirCommunity     | ELIXIR community          | ```<labels><elixirCommunity>```
+biotools:ElixirNode          | ELIXIR national node      | ```<elixirNode>```
+biotools:ElixirPlatform      | ELIXIR technical platform | ```<elixirPlatform>```
+biotools:ElixirCommunity     | ELIXIR community          | ```<elixirCommunity>```
 
 
 # Properties
@@ -128,23 +128,23 @@ rdfs:comment                | Misc. entity has an associated note
 
 property                        | value                     | biotoolsSchema
 ---------------------           | --------------            | ---------------------
-dcterms:title (1)               | xsd:token                 | ```<summary><name>```
-dcterms:description             | xsd:token                 | ```<summary><description>```
-foaf:page                       | xsd:anyURI                | ```<summary><homepage>```
-dcterms:identifier              | xsd:token                 | ```<summary><biotoolsID>```
-dcterms:identifier              | xsd:token                 | ```<summary><biotoolsCURIE>```
-pov:hasVersion                  | xsd:token                 | ```<summary><version>```
-dcterms:type                    | biotools:ToolType         | ```<labels><toolType>```
-dcterms:subject (2)             | edam:Topic                | ```<labels><topic>```
-biotools:operatingSystem        | biotools:OperatingSystem  | ```<labels><operatingSystem>```
-dcterms:language                | biotools:Language         | ```<labels><language>```
-dcterms:license                 | biotools:License          | ```<labels><license>```
-biotools:collectionId           | xsd:token                 | ```<labels><collectionID>```
-biotools:maturity               | biotools:Maturity         | ```<labels><maturity>```
-biotools:cost                   | biotools:Cost             | ```<labels><cost>```
-biotools:accessibility          | biotools:Accessibility    | ```<labels><accessibility>```
-biotools:elixirCredit           | biotools:ElixirCredit     | ```<labels><elixirNode>\|<elixirPlatform>\|<elixirCommunity>```
-biotools:hasOtherId             | biotools:OtherId          | ```<summary><otherID>```
+dcterms:title (1)               | xsd:token                 | ```<name>```
+dcterms:description             | xsd:token                 | ```<description>```
+foaf:page                       | xsd:anyURI                | ```<homepage>```
+dcterms:identifier              | xsd:token                 | ```<biotoolsID>```
+dcterms:identifier              | xsd:token                 | ```<biotoolsCURIE>```
+pov:hasVersion                  | xsd:token                 | ```<version>```
+dcterms:type                    | biotools:ToolType         | ```<toolType>```
+dcterms:subject (2)             | edam:Topic                | ```<topic>```
+biotools:operatingSystem        | biotools:OperatingSystem  | ```<operatingSystem>```
+dcterms:language                | biotools:Language         | ```<language>```
+dcterms:license                 | biotools:License          | ```<license>```
+biotools:collectionId           | xsd:token                 | ```<collectionID>```
+biotools:maturity               | biotools:Maturity         | ```<maturity>```
+biotools:cost                   | biotools:Cost             | ```<cost>```
+biotools:accessibility          | biotools:Accessibility    | ```<accessibility>```
+biotools:elixirCredit           | biotools:ElixirCredit     | ```<elixirNode>\|<elixirPlatform>\|<elixirCommunity>```
+biotools:hasOtherId             | biotools:OtherId          | ```<otherID>```
 biotools:hasFunction            | biotools:Function         | ```<function>```
 biotools:hasRelatedResource (3) | biotools:RelatedResource  | ```<link>\|<download>\|<documentation>```
 
