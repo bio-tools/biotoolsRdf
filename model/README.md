@@ -13,16 +13,27 @@ biotoolsRDF uses classes and properties from the following vocabularies:
 
 prefix   | namespace IRI                               | definition
 -------- | ------------------------------------------- | ----------
-rdf      | http://www.w3.org/1999/02/22-rdf-syntax-ns# | The [RDF namespace](https://www.w3.org/TR/prov-o/#bib-RDF-CONCEPTS)
-xsd      | http://www.w3.org/2000/10/XMLSchema#        | XML [Schema Namespace](https://www.w3.org/TR/prov-o/#bib-XMLSCHEMA11-2)
-prov     | http://www.w3.org/ns/prov#                  | The [PROV namespace](https://www.w3.org/TR/prov-o/#bib-PROV-DM)
-edam     | http://edamontology.org#                    | The [EDAM namespace](https://github.com/edamontology/edamontology)
-foaf     | http://xmlns.com/foaf/0.1/#                 | The [FOAF namespace](http://xmlns.com/foaf/spec/)
-dcterms  | http://purl.org/dc/terms/                   | The [DCMI terms namespace](http://dublincore.org/documents/dcmi-terms/) of Dublin Core Metadata Initiative
-dc       | http://purl.org/dc/elements/1.1/            | The [Dublin Core Metadata Element Set](http://dublincore.org/documents/dces/), Version 1.1 (original 15 elements)
-dcmitype | http://purl.org/dc/dcmitype/                | Classes in the [DCMI Type Vocabulary](http://dublincore.org/documents/dcmi-type-vocabulary/)
+rdfs     | http://www.w3.org/2000/01/rdf-schema#       | [RDF Schema 1.1 namespace](https://www.w3.org/TR/2014/REC-rdf-schema-20140225/)
+xsd      | http://www.w3.org/2000/10/XMLSchema#        | [XML Schema Namespace](https://www.w3.org/TR/2012/REC-xmlschema11-2-20120405/)
+edam     | http://edamontology.org#                    | [EDAM namespace](https://github.com/edamontology/edamontology)
+foaf     | http://xmlns.com/foaf/0.1/#                 | [FOAF namespace](http://xmlns.com/foaf/spec/)
+dcterms  | http://purl.org/dc/terms/                   | [DCMI terms namespace](http://dublincore.org/documents/dcmi-terms/) of Dublin Core Metadata Initiative
 
 
+
+The following vocabularies are used for housekeeping (internal aspects of biotoolsRDF not documented below):
+
+prefix   | namespace IRI                                 | definition
+-------- | --------------------------------------------- | ----------
+rdf      | http://www.w3.org/1999/02/22-rdf-syntax-ns#   | [RDF namespace](https://www.w3.org/TR/rdf-schema/)
+dc       | http://purl.org/dc/elements/1.1/              | [Dublin Core Metadata Element Set](http://dublincore.org/documents/dces/), Version 1.1 (original 15 elements)
+owl      | http://www.w3.org/2002/07/owl#                | [OWL Web Ontology Language](https://www.w3.org/TR/owl-guide/)
+doap     | http://usefulinc.com/ns/doap#                 | [DOAP vocabulary](https://github.com/ewilderj/doap/wiki)
+oboInOwl | http://www.geneontology.org/formats/oboInOwl# | [oboInOwl vocabulary](https://www.bioontology.org/wiki/OboInOwl:Main_Page)
+obo      | http://purl.obolibrary.org/obo/               | [obo vocabulary](https://owlcollab.github.io/oboformat/doc/obo-syntax.html)
+
+
+     
 # Classes
 biotoolsRDF uses the following classes:
 
@@ -52,6 +63,8 @@ biotools:PublicationType     | Type of publication             | ```<publication
 xsd:token                    | String (with restrictions)      | - 
 xsd:anyURI                   | URI                             | - 
 
+
+NB:  biotools:Tool is equivalent to the Software class (http://purl.org/dc/dcmitype/Software) from the [DCMI Type Vocabulary](http://dublincore.org/documents/dcmi-type-vocabulary/).
 
 ## Subclasses of biotools:RelatedResourceType
 
@@ -108,7 +121,7 @@ dcterms:type                | Misc entity has tags from controlled vocabulary
 foaf:name                   | Misc entity has a name
 foaf:mbox                   | Credited entity has an email address
 foaf:page                   | Misc. entity has a URL
-pov:hasVersion              | Misc. entity has an associated version number
+dcterms:hasVersion          | Misc. entity has an associated version number
 rdfs:comment                | Misc. entity has an associated note
 
 
@@ -133,7 +146,7 @@ dcterms:description             | xsd:token                 | ```<description>``
 foaf:page                       | xsd:anyURI                | ```<homepage>```
 dcterms:identifier              | xsd:token                 | ```<biotoolsID>```
 dcterms:identifier              | xsd:token                 | ```<biotoolsCURIE>```
-pov:hasVersion                  | xsd:token                 | ```<version>```
+dcterms:hasVersion              | xsd:token                 | ```<version>```
 dcterms:type                    | biotools:ToolType         | ```<toolType>```
 dcterms:subject (2)             | edam:Topic                | ```<topic>```
 biotools:operatingSystem        | biotools:OperatingSystem  | ```<operatingSystem>```
@@ -163,7 +176,7 @@ property                     | value                        | biotoolsSchema
 ---------------------------- | --------------               | ---------------------
 dcterms:identifier           | xsd:token                    | ```<otherid><value>```
 dcterms:type                 | biotools:OtherIdType         | ```<otherid<type>```
-pov:hasVersion               | xsd:token                    | ```<otherid><version>```
+dcterms:hasVersion           | xsd:token                    | ```<otherid><version>```
 
 
 
@@ -197,7 +210,7 @@ property                     | value                        | biotoolsSchema
 ---------------------------- | --------------               | ---------------------
 foaf:page                    | xsd:anyURI                   | ```<link>\|<download>\|<documentation><uri>```
 rdfs:comment                 | xsd:token                    | ```<link>\|<download>\|<documentation><note>```
-pov:hasVersion               | xsd:token                    | ```<link>\|<download>\|<documentation><version>```
+dcterms:hasVersion           | xsd:token                    | ```<link>\|<download>\|<documentation><version>```
 dcterms:type                 | biotools:RelatedResourceType | ```<link>\|<download>\|<documentation><type>```
 
 
@@ -230,7 +243,7 @@ dcterms:identifier           | xsd:token                    | ```<publication><d
 dcterms:identifier           | xsd:token                    | ```<publication><pmid>```
 dcterms:identifier           | xsd:token                    | ```<publication><pmcid>```
 dcterms:type                 | biotools:PublicationType     | ```<publication><type>```
-pov:hasVersion               | xsd:token                    | ```<publication><version>```
+dcterms:hasVersion           | xsd:token                    | ```<publication><version>```
 
 
 
