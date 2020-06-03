@@ -4,7 +4,7 @@
 
 The biotools ontology (biotoolsRDF) defines the OWL2 Web Ontology Language encoding of [biotoolsSchema](https://github.com/bio-tools/biotoolsschema); the resource description model for bioinformatics software.  This document describes the set of classes, properties and restrictions that can be used to represent and interchange information about software provided in different systems and contexts.
 
-biotoolsRDF is fully compatible with biotoolsSchema and thus [bio.tools](https://github.com/bio-tools/biotoolsregistry/); the registry of bioinformatics software resources (https:bio.tools) provided by [ELIXIR](https://www.elixir-europe.org/).
+biotoolsRDF is fully compatible with biotoolsSchema and thus [bio.tools](https://github.com/bio-tools/biotoolsregistry/); the registry of bioinformatics software resources (https//:bio.tools) provided by [ELIXIR](https://www.elixir-europe.org/).
 
 biotoolsRDF is an *application ontology* and re-uses other well established vocabularies wherever possible, adhering to the [MIREOT guidelines](http://precedings.nature.com/documents/3574/version/1) for concept imports.
 
@@ -30,7 +30,7 @@ dc       | http://purl.org/dc/elements/1.1/              | [Dublin Core Metadata
 owl      | http://www.w3.org/2002/07/owl#                | [OWL Web Ontology Language](https://www.w3.org/TR/owl-guide/)
 doap     | http://usefulinc.com/ns/doap#                 | [DOAP vocabulary](https://github.com/ewilderj/doap/wiki)
 oboInOwl | http://www.geneontology.org/formats/oboInOwl# | [oboInOwl vocabulary](https://www.bioontology.org/wiki/OboInOwl:Main_Page)
-obo      | http://purl.obolibrary.org/obo/               | [obo vocabulary](https://owlcollab.github.io/oboformat/doc/obo-syntax.html)
+obo      | http://purl.obolibrary.org/obo/               | [OBO vocabulary](https://owlcollab.github.io/oboformat/doc/obo-syntax.html)
 
 
      
