@@ -256,11 +256,11 @@
     
 
 
-    <!-- http://xmlns.com/foaf/0.1/page -->
+    <!-- http://www.w3.org/2000/01/rdf-schema#comment -->
 
-    <owl:AnnotationProperty rdf:about="http://xmlns.com/foaf/0.1/page">
-        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-    </owl:AnnotationProperty>
+    <rdf:Description rdf:about="http://www.w3.org/2000/01/rdf-schema#comment">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#token"/>
+    </rdf:Description>
     
 
 
@@ -275,23 +275,170 @@
     
 
 
-    <!-- http://biotoolsRDF.org/accessibility -->
+    <!-- http://biotoolsRDF.org/collectionId -->
 
-    <owl:ObjectProperty rdf:about="http://biotoolsRDF.org/accessibility">
+    <owl:ObjectProperty rdf:about="http://biotoolsRDF.org/collectionId">
         <rdfs:domain rdf:resource="http://biotoolsRDF.org/Tool"/>
-        <rdfs:range rdf:resource="http://biotoolsRDF.org/Accessibility"/>
-        <oboInOwl:hasDefinition>Defines a tool (biotoolsRDF:Tool) to have a certain accessibility (biotoolsRDF:Accessibility).</oboInOwl:hasDefinition>
-        <oboInOwl:inSubset>relations</oboInOwl:inSubset>
-        <rdfs:label>accessibility</rdfs:label>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://biotoolsRDF.org/collectionId -->
+    <!-- http://biotoolsRDF.org/hasAccessibility -->
 
-    <owl:ObjectProperty rdf:about="http://biotoolsRDF.org/collectionId">
-      <rdfs:domain rdf:resource="http://biotoolsRDF.org/Tool"/>
-      <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#token"/>
+    <owl:ObjectProperty rdf:about="http://biotoolsRDF.org/hasAccessibility">
+        <rdfs:domain rdf:resource="http://biotoolsRDF.org/Tool"/>
+        <rdfs:range rdf:resource="http://biotoolsRDF.org/Accessibility"/>
+        <created_in rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1.0</created_in>
+        <oboInOwl:hasDefinition>Tool has an accessibility tag.  Defines a tool (biotoolsRDF:Tool) to have a certain accessibility (biotoolsRDF:Accessibility).</oboInOwl:hasDefinition>
+        <rdfs:label>hasAccessibility</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://biotoolsRDF.org/hasCost -->
+
+    <owl:ObjectProperty rdf:about="http://biotoolsRDF.org/hasCost">
+        <rdfs:domain rdf:resource="http://biotoolsRDF.org/Tool"/>
+        <rdfs:range rdf:resource="http://biotoolsRDF.org/Cost"/>
+        <created_in rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1.0</created_in>
+        <oboInOwl:hasDefinition>Tool has a monetary cost. Defines a tool (biotoolsRDF:Tool) to have a certain cost (biotoolsRDF:Cost).</oboInOwl:hasDefinition>
+        <rdfs:label>hasCost</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://biotoolsRDF.org/hasDataFormat -->
+
+    <owl:ObjectProperty rdf:about="http://biotoolsRDF.org/hasDataFormat">
+        <rdfs:domain rdf:resource="http://biotoolsRDF.org/IOData"/>
+        <rdfs:range rdf:resource="http://edamontology.org/format_1915"/>
+        <created_in rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1.0</created_in>
+        <oboInOwl:hasDefinition>A tool input or output is supported in a certain data format.  Defines an input or output (biotoolsRDF:IOData) of a tool to supported for a certain data format (edam:Format).</oboInOwl:hasDefinition>
+        <rdfs:label>hasDataFormat</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://biotoolsRDF.org/hasDataType -->
+
+    <owl:ObjectProperty rdf:about="http://biotoolsRDF.org/hasDataType">
+        <rdfs:domain rdf:resource="http://biotoolsRDF.org/IOData"/>
+        <rdfs:range rdf:resource="http://biotoolsRDF.org/Data_Platform"/>
+        <created_in rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1.0</created_in>
+        <oboInOwl:hasDefinition>A tool input or output has a certain data type.  Defines an input or output (biotoolsRDF:IOData) of a tool to be of a certain data type (edam:Data).</oboInOwl:hasDefinition>
+        <rdfs:label>hasDataType</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://biotoolsRDF.org/hasElxirCredit -->
+
+    <owl:ObjectProperty rdf:about="http://biotoolsRDF.org/hasElxirCredit">
+        <rdfs:domain rdf:resource="http://biotoolsRDF.org/Tool"/>
+        <rdfs:range rdf:resource="http://biotoolsRDF.org/ElixirCredit"/>
+        <created_in rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1.0</created_in>
+        <oboInOwl:hasDefinition>Tool has a credited ELIXIR entity. Defines a tool (biotoolsRDF:Tool) to have a certain ELIXIR Credit (biotoolsRDF:ElixirCredit).</oboInOwl:hasDefinition>
+        <rdfs:label>hasElixirCredit</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://biotoolsRDF.org/hasFunction -->
+
+    <owl:ObjectProperty rdf:about="http://biotoolsRDF.org/hasFunction">
+        <rdfs:domain rdf:resource="http://biotoolsRDF.org/Tool"/>
+        <rdfs:range rdf:resource="http://biotoolsRDF.org/Function"/>
+        <created_in rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1.0</created_in>
+        <oboInOwl:hasDefinition>Tool has a function/mode of operating. Defines a tool (biotoolsRDF:Tool) to have a function (biotoolsRDF:Function).</oboInOwl:hasDefinition>
+        <rdfs:label>hasFunction</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://biotoolsRDF.org/hasInput -->
+
+    <owl:ObjectProperty rdf:about="http://biotoolsRDF.org/hasInput">
+        <rdfs:domain rdf:resource="http://biotoolsRDF.org/Function"/>
+        <rdfs:range rdf:resource="http://biotoolsRDF.org/IOData"/>
+        <created_in rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1.0</created_in>
+        <oboInOwl:hasDefinition>Tool function/mode has an input. Defines a tool function (biotoolsRDF:Function) to have an input (biotoolsRDF:IOData).</oboInOwl:hasDefinition>
+        <rdfs:label>hasInput</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://biotoolsRDF.org/hasMaturity -->
+
+    <owl:ObjectProperty rdf:about="http://biotoolsRDF.org/hasMaturity">
+        <rdfs:domain rdf:resource="http://biotoolsRDF.org/Tool"/>
+        <rdfs:range rdf:resource="http://biotoolsRDF.org/Maturity"/>
+        <created_in rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1.0</created_in>
+        <oboInOwl:hasDefinition>Tool has assocatited product maturity level. Defines a tool (biotoolsRDF:Tool) to have an associated product maturity (biotoolsRDF:Maturity).</oboInOwl:hasDefinition>
+        <rdfs:label>hasMaturity</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://biotoolsRDF.org/hasOperatingSystem -->
+
+    <owl:ObjectProperty rdf:about="http://biotoolsRDF.org/hasOperatingSystem">
+        <rdfs:domain rdf:resource="http://biotoolsRDF.org/Tool"/>
+        <rdfs:range rdf:resource="http://biotoolsRDF.org/OperatingSystem"/>
+        <created_in rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1.0</created_in>
+        <oboInOwl:hasDefinition>Tool has supported operating system. Defines a tool (biotoolsRDF:Tool) to have a supported operating system (biotoolsRDF:OperatingSystem).</oboInOwl:hasDefinition>
+        <rdfs:label>hasOperatingSystem</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://biotoolsRDF.org/hasOperation -->
+
+    <owl:ObjectProperty rdf:about="http://biotoolsRDF.org/hasOperation">
+        <rdfs:domain rdf:resource="http://biotoolsRDF.org/Function"/>
+        <rdfs:range rdf:resource="http://edamontology.org/operation_0004"/>
+        <created_in rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1.0</created_in>
+        <oboInOwl:hasDefinition>Tool function/mode performs some specific operation. Defines a tool function (biotoolsRDF:Function) to have an operation (edam:Operation).</oboInOwl:hasDefinition>
+        <rdfs:label>hasOperation</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://biotoolsRDF.org/hasOtherId -->
+
+    <owl:ObjectProperty rdf:about="http://biotoolsRDF.org/hasOtherId">
+        <rdfs:domain rdf:resource="http://biotoolsRDF.org/Tool"/>
+        <rdfs:range rdf:resource="http://biotoolsRDF.org/OtherId"/>
+        <created_in rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1.0</created_in>
+        <oboInOwl:hasDefinition>Tool has an identifier (typically in addition to bio.tools toolID)</oboInOwl:hasDefinition>
+        <rdfs:label>hasOtherId</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://biotoolsRDF.org/hasOutput -->
+
+    <owl:ObjectProperty rdf:about="http://biotoolsRDF.org/hasOutput">
+        <rdfs:domain rdf:resource="http://biotoolsRDF.org/Function"/>
+        <rdfs:range rdf:resource="http://biotoolsRDF.org/IOData"/>
+        <created_in rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1.0</created_in>
+        <oboInOwl:hasDefinition>Tool function/mode has an output. Defines a tool function (biotoolsRDF:Function) to have an output (biotoolsRDF:IOData).</oboInOwl:hasDefinition>
+        <rdfs:label>hasOutput</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://biotoolsRDF.org/hasRelatedResource -->
+
+    <owl:ObjectProperty rdf:about="http://biotoolsRDF.org/hasRelatedResource">
+        <rdfs:domain rdf:resource="http://biotoolsRDF.org/Tool"/>
+        <rdfs:range rdf:resource="http://biotoolsRDF.org/RelatedResource"/>
+        <created_in rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1.0</created_in>
+        <oboInOwl:hasDefinition>Tool has a related resource (link, download or documentation). 
+
+
+Defines a tool (biotoolsRDF:Tool) to have a related resource (biotoolsRDF:RelatedResource), either a link (biotoolsRDF:Link), download (biotoolsRDF:Download) or documentation (biotoolsRDF:Documentation).
+.</oboInOwl:hasDefinition>
+        <rdfs:label>hasRelatedResource</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -304,10 +451,36 @@
     
 
 
+    <!-- http://purl.org/dc/terms/hasVersion -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/dc/terms/hasVersion">
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://biotoolsRDF.org/OtherId"/>
+                    <rdf:Description rdf:about="http://biotoolsRDF.org/Publication"/>
+                    <rdf:Description rdf:about="http://biotoolsRDF.org/RelatedResource"/>
+                    <rdf:Description rdf:about="http://biotoolsRDF.org/Tool"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://purl.org/dc/terms/identifier -->
 
     <owl:ObjectProperty rdf:about="http://purl.org/dc/terms/identifier">
-        <rdfs:domain rdf:resource="http://biotoolsRDF.org/Tool"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://biotoolsRDF.org/Credit"/>
+                    <rdf:Description rdf:about="http://biotoolsRDF.org/OtherId"/>
+                    <rdf:Description rdf:about="http://biotoolsRDF.org/Publication"/>
+                    <rdf:Description rdf:about="http://biotoolsRDF.org/Tool"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
     </owl:ObjectProperty>
     
 
@@ -316,10 +489,9 @@
 
     <owl:ObjectProperty rdf:about="http://purl.org/dc/terms/language">
         <rdfs:domain rdf:resource="http://biotoolsRDF.org/Tool"/>
-        <rdfs:range rdf:resource="http://edamontology.org/topic_0003"/>
+        <rdfs:range rdf:resource="http://biotoolsRDF.org/Language"/>
         <oboInOwl:hasDefinition>Defines a tool (biotoolsRDF:Tool) source code to be written in a certain programming language  (biotoolsRDF:Language).</oboInOwl:hasDefinition>
         <oboInOwl:hasExactSynonym>dcterms:Language</oboInOwl:hasExactSynonym>
-        <oboInOwl:inSubset>relations</oboInOwl:inSubset>
         <rdfs:label>language</rdfs:label>
     </owl:ObjectProperty>
     
@@ -332,7 +504,6 @@
         <rdfs:range rdf:resource="http://biotoolsRDF.org/License"/>
         <oboInOwl:hasDefinition>Defines a tool (biotoolsRDF:Tool) source code to be released under a certain license (biotoolsRDF:License).</oboInOwl:hasDefinition>
         <oboInOwl:hasExactSynonym>dcterms:License</oboInOwl:hasExactSynonym>
-        <oboInOwl:inSubset>relations</oboInOwl:inSubset>
         <rdfs:label>license</rdfs:label>
     </owl:ObjectProperty>
     
@@ -345,9 +516,15 @@
         <rdfs:range rdf:resource="http://edamontology.org/topic_0003"/>
         <oboInOwl:hasDefinition>Defines a tool (biotoolsRDF:Tool) has a relevant topic (edam:topic_0003).</oboInOwl:hasDefinition>
         <oboInOwl:hasExactSynonym>dcterms:Subject</oboInOwl:hasExactSynonym>
-        <oboInOwl:inSubset>relations</oboInOwl:inSubset>
         <rdfs:label>topic</rdfs:label>
-        <rdfs:seeAlso>http://wsio.org/data_002</rdfs:seeAlso>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/dc/terms/title -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/dc/terms/title">
+        <rdfs:domain rdf:resource="http://biotoolsRDF.org/Tool"/>
     </owl:ObjectProperty>
     
 
@@ -369,6 +546,7 @@
         <rdfs:range>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://biotoolsRDF.org/CreditType"/>
                     <rdf:Description rdf:about="http://biotoolsRDF.org/OtherIdType"/>
                     <rdf:Description rdf:about="http://biotoolsRDF.org/PublicationType"/>
                     <rdf:Description rdf:about="http://biotoolsRDF.org/RelatedResourceType"/>
@@ -384,6 +562,23 @@
     
 
 
+    <!-- http://www.w3.org/2000/01/rdf-schema#comment -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/2000/01/rdf-schema#comment">
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://biotoolsRDF.org/Credit"/>
+                    <rdf:Description rdf:about="http://biotoolsRDF.org/Function"/>
+                    <rdf:Description rdf:about="http://biotoolsRDF.org/Publication"/>
+                    <rdf:Description rdf:about="http://biotoolsRDF.org/RelatedResource"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://xmlns.com/foaf/0.1/mbox -->
 
     <owl:ObjectProperty rdf:about="http://xmlns.com/foaf/0.1/mbox">
@@ -395,14 +590,7 @@
     <!-- http://xmlns.com/foaf/0.1/name -->
 
     <owl:ObjectProperty rdf:about="http://xmlns.com/foaf/0.1/name">
-        <rdfs:domain>
-            <owl:Class>
-                <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://biotoolsRDF.org/Credit"/>
-                    <rdf:Description rdf:about="http://biotoolsRDF.org/Tool"/>
-                </owl:unionOf>
-            </owl:Class>
-        </rdfs:domain>
+        <rdfs:domain rdf:resource="http://biotoolsRDF.org/Credit"/>
     </owl:ObjectProperty>
     
 
@@ -434,10 +622,50 @@
     
 
 
+    <!-- http://biotoolsRDF.org/cmd -->
+
+    <owl:DatatypeProperty rdf:about="http://biotoolsRDF.org/cmd">
+        <rdfs:domain rdf:resource="http://biotoolsRDF.org/Function"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#token"/>
+        <created_in rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1.0</created_in>
+        <oboInOwl:hasDefinition>Tool function/mode has pertinent command-line fragment. 
+
+Defines a tool fnuction/mode (biotoolsRDF:Function) to have an associated command-line fragment (xsd:token).</oboInOwl:hasDefinition>
+        <rdfs:label>cmd</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://biotoolsRDF.org/collectionId -->
+
+    <owl:DatatypeProperty rdf:about="http://biotoolsRDF.org/collectionId">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#token"/>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- http://purl.org/dc/terms/description -->
 
     <owl:DatatypeProperty rdf:about="http://purl.org/dc/terms/description">
-        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#token"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/dc/terms/hasVersion -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/dc/terms/hasVersion">
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://biotoolsRDF.org/OtherId"/>
+                    <rdf:Description rdf:about="http://biotoolsRDF.org/Publication"/>
+                    <rdf:Description rdf:about="http://biotoolsRDF.org/RelatedResource"/>
+                    <rdf:Description rdf:about="http://biotoolsRDF.org/Tool"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#token"/>
     </owl:DatatypeProperty>
     
 
@@ -445,7 +673,23 @@
     <!-- http://purl.org/dc/terms/identifier -->
 
     <owl:DatatypeProperty rdf:about="http://purl.org/dc/terms/identifier">
-        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#token"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/dc/terms/title -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/dc/terms/title">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#token"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.w3.org/2000/01/rdf-schema#comment -->
+
+    <owl:DatatypeProperty rdf:about="http://www.w3.org/2000/01/rdf-schema#comment">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#token"/>
     </owl:DatatypeProperty>
     
 
@@ -453,7 +697,7 @@
     <!-- http://xmlns.com/foaf/0.1/mbox -->
 
     <owl:DatatypeProperty rdf:about="http://xmlns.com/foaf/0.1/mbox">
-        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#token"/>
     </owl:DatatypeProperty>
     
 
@@ -461,7 +705,24 @@
     <!-- http://xmlns.com/foaf/0.1/name -->
 
     <owl:DatatypeProperty rdf:about="http://xmlns.com/foaf/0.1/name">
-        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#token"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/page -->
+
+    <owl:DatatypeProperty rdf:about="http://xmlns.com/foaf/0.1/page">
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://biotoolsRDF.org/Credit"/>
+                    <rdf:Description rdf:about="http://biotoolsRDF.org/RelatedResource"/>
+                    <rdf:Description rdf:about="http://biotoolsRDF.org/Tool"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
     </owl:DatatypeProperty>
     
 
@@ -2005,6 +2266,17 @@
     
 
 
+    <!-- http://biotoolsRDF.org/Commercial -->
+
+    <owl:Class rdf:about="http://biotoolsRDF.org/Commercial">
+        <rdfs:subClassOf rdf:resource="http://biotoolsRDF.org/Cost"/>
+        <created_in rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1.0</created_in>
+        <oboInOwl:hasDefinition>Software which you have to pay to access.</oboInOwl:hasDefinition>
+        <rdfs:label>Commercial</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://biotoolsRDF.org/Compute_Platform -->
 
     <owl:Class rdf:about="http://biotoolsRDF.org/Compute_Platform">
@@ -2071,9 +2343,56 @@
     
 
 
+    <!-- http://biotoolsRDF.org/Cost -->
+
+    <owl:Class rdf:about="http://biotoolsRDF.org/Cost">
+        <created_in rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1.0</created_in>
+        <oboInOwl:hasDefinition>Monetary cost of acquiring the software.</oboInOwl:hasDefinition>
+        <rdfs:label>Cost</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://biotoolsRDF.org/Credit -->
 
     <owl:Class rdf:about="http://biotoolsRDF.org/Credit">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/dc/terms/identifier"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/dc/terms/type"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onClass rdf:resource="http://biotoolsRDF.org/CreditType"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#comment"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://xmlns.com/foaf/0.1/mbox"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://xmlns.com/foaf/0.1/name"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://xmlns.com/foaf/0.1/page"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <created_in>1.0</created_in>
         <oboInOwl:hasDefinition>Credis of the software.</oboInOwl:hasDefinition>
         <rdfs:label>Credit</rdfs:label>
@@ -2197,16 +2516,6 @@
         <oboInOwl:hasDefinition>DSDP License</oboInOwl:hasDefinition>
         <rdfs:label>DSDP</rdfs:label>
         <rdfs:seeAlso rdf:resource="https://spdx.org/licenses/DSDP"/>
-    </owl:Class>
-    
-
-
-    <!-- http://biotoolsRDF.org/Data -->
-
-    <owl:Class rdf:about="http://biotoolsRDF.org/Data">
-        <created_in>1.0</created_in>
-        <oboInOwl:hasDefinition>Input or output data.</oboInOwl:hasDefinition>
-        <rdfs:label>Data</rdfs:label>
     </owl:Class>
     
 
@@ -2738,9 +3047,62 @@
     
 
 
+    <!-- http://biotoolsRDF.org/Free_of_charge -->
+
+    <owl:Class rdf:about="http://biotoolsRDF.org/Free_of_charge">
+        <rdfs:subClassOf rdf:resource="http://biotoolsRDF.org/Cost"/>
+        <created_in rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1.0</created_in>
+        <oboInOwl:hasDefinition>Software which available for use by all, with full functionality, at no monetary cost to the user.</oboInOwl:hasDefinition>
+        <rdfs:label>Free of charge</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://biotoolsRDF.org/Function -->
 
     <owl:Class rdf:about="http://biotoolsRDF.org/Function">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://biotoolsRDF.org/hasInput"/>
+                <owl:someValuesFrom rdf:resource="http://biotoolsRDF.org/Data_Platform"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://biotoolsRDF.org/hasOperation"/>
+                <owl:someValuesFrom rdf:resource="http://edamontology.org/operation_0004"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://biotoolsRDF.org/hasOutput"/>
+                <owl:someValuesFrom rdf:resource="http://biotoolsRDF.org/Data_Platform"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://biotoolsRDF.org/hasInput"/>
+                <owl:allValuesFrom rdf:resource="http://biotoolsRDF.org/Data_Platform"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://biotoolsRDF.org/hasOperation"/>
+                <owl:allValuesFrom rdf:resource="http://edamontology.org/operation_0004"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://biotoolsRDF.org/hasOutput"/>
+                <owl:allValuesFrom rdf:resource="http://biotoolsRDF.org/Data_Platform"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://biotoolsRDF.org/cmd"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <created_in>1.0</created_in>
         <oboInOwl:hasDefinition>Software function / mode.</oboInOwl:hasDefinition>
         <rdfs:label>Function</rdfs:label>
@@ -3107,6 +3469,35 @@
         <oboInOwl:hasDefinition>Independent JPEG Group License</oboInOwl:hasDefinition>
         <rdfs:label>IJG</rdfs:label>
         <rdfs:seeAlso rdf:resource="https://spdx.org/licenses/IJG"/>
+    </owl:Class>
+    
+
+
+    <!-- http://biotoolsRDF.org/IOData -->
+
+    <owl:Class rdf:about="http://biotoolsRDF.org/IOData">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://biotoolsRDF.org/hasDataFormat"/>
+                <owl:someValuesFrom rdf:resource="http://edamontology.org/format_1915"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://biotoolsRDF.org/hasDataFormat"/>
+                <owl:allValuesFrom rdf:resource="http://edamontology.org/format_1915"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://biotoolsRDF.org/hasDataType"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://biotoolsRDF.org/Data_Platform"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <created_in>1.0</created_in>
+        <oboInOwl:hasDefinition>Input or output data.</oboInOwl:hasDefinition>
+        <rdfs:label>IO data</rdfs:label>
     </owl:Class>
     
 
@@ -4878,6 +5269,25 @@
     <!-- http://biotoolsRDF.org/OtherId -->
 
     <owl:Class rdf:about="http://biotoolsRDF.org/OtherId">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/dc/terms/identifier"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/dc/terms/hasVersion"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/dc/terms/type"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onClass rdf:resource="http://biotoolsRDF.org/OtherIdType"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <created_in>1.0</created_in>
         <oboInOwl:hasDefinition>Software unique identifier.</oboInOwl:hasDefinition>
         <rdfs:label>OtherId</rdfs:label>
@@ -5125,6 +5535,24 @@
     <!-- http://biotoolsRDF.org/Publication -->
 
     <owl:Class rdf:about="http://biotoolsRDF.org/Publication">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/dc/terms/type"/>
+                <owl:allValuesFrom rdf:resource="http://biotoolsRDF.org/PublicationType"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/dc/terms/identifier"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/dc/terms/hasVersion"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <created_in>1.0</created_in>
         <oboInOwl:hasDefinition>Publication about the software.</oboInOwl:hasDefinition>
         <rdfs:label>Publication</rdfs:label>
@@ -5306,6 +5734,31 @@
     <!-- http://biotoolsRDF.org/RelatedResource -->
 
     <owl:Class rdf:about="http://biotoolsRDF.org/RelatedResource">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/dc/terms/type"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+                <owl:onClass rdf:resource="http://biotoolsRDF.org/RelatedResourceType"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://xmlns.com/foaf/0.1/page"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/dc/terms/hasVersion"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#comment"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <created_in>1.0</created_in>
         <oboInOwl:hasDefinition>Link, download or documentation.</oboInOwl:hasDefinition>
         <rdfs:label>Related resource</rdfs:label>
@@ -6020,8 +6473,76 @@
     <owl:Class rdf:about="http://biotoolsRDF.org/Tool">
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://biotoolsRDF.org/accessibility"/>
-                <owl:someValuesFrom rdf:resource="http://biotoolsRDF.org/Accessibility"/>
+                <owl:onProperty rdf:resource="http://biotoolsRDF.org/hasElxirCredit"/>
+                <owl:allValuesFrom rdf:resource="http://biotoolsRDF.org/ElixirCredit"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://biotoolsRDF.org/hasFunction"/>
+                <owl:allValuesFrom rdf:resource="http://biotoolsRDF.org/Function"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://biotoolsRDF.org/hasMaturity"/>
+                <owl:allValuesFrom rdf:resource="http://biotoolsRDF.org/Maturity"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://biotoolsRDF.org/hasOperatingSystem"/>
+                <owl:allValuesFrom rdf:resource="http://biotoolsRDF.org/OperatingSystem"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://biotoolsRDF.org/hasOtherId"/>
+                <owl:allValuesFrom rdf:resource="http://biotoolsRDF.org/OtherId"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://biotoolsRDF.org/hasRelatedResource"/>
+                <owl:allValuesFrom rdf:resource="http://biotoolsRDF.org/RelatedResource"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/dc/terms/type"/>
+                <owl:allValuesFrom rdf:resource="http://biotoolsRDF.org/ToolType"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://biotoolsRDF.org/collectionId"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://biotoolsRDF.org/hasAccessibility"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://biotoolsRDF.org/Accessibility"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://biotoolsRDF.org/hasCost"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://biotoolsRDF.org/Cost"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/dc/terms/description"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/dc/terms/title"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
         <created_in>1.0</created_in>
@@ -6625,7 +7146,7 @@
     <owl:Class rdf:about="http://biotoolsRDF.org/biotoolsCURIE">
         <rdfs:subClassOf rdf:resource="http://biotoolsRDF.org/OtherIdType"/>
         <created_in>1.0</created_in>
-        <oboInOwl:hasDefinition>bio.tools CURIE (secondary identifier).</oboInOwl:hasDefinition>
+        <oboInOwl:hasDefinition>bio.tools CURIE (compact URI) - a secondary identifier of a bio.tools entry.</oboInOwl:hasDefinition>
         <rdfs:label>biotoolsCURIE</rdfs:label>
     </owl:Class>
     
@@ -6906,7 +7427,6 @@
     
 
 
-
     <!-- http://biotoolsRDF.org/0BSD -->
 
     <owl:Class rdf:about="http://biotoolsRDF.org/0BSD">
@@ -6936,6 +7456,17 @@
         <created_in>1.0</created_in>
         <oboInOwl:hasDefinition>C++ programming language.</oboInOwl:hasDefinition>
         <rdfs:label>C++</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://biotoolsRDF.org/Free_of_charge_(with_restrictions) -->
+
+    <owl:Class rdf:about="http://biotoolsRDF.org/Free_of_charge_(with_restrictions)">
+        <rdfs:subClassOf rdf:resource="http://biotoolsRDF.org/Cost"/>
+        <created_in rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1.0</created_in>
+        <oboInOwl:hasDefinition>Software which is available for use at no monetary cost to the user, but possibly with limited functionality, usage restrictions, or other limitations.</oboInOwl:hasDefinition>
+        <rdfs:label>Free of charge (with restrictions)</rdfs:label>
     </owl:Class>
     
 
@@ -7050,9 +7581,55 @@
     
 
 
+    <!-- http://edamontology.org/data_0006 -->
+
+    <owl:Class rdf:about="http://edamontology.org/data_0006">
+        <owl:disjointWith rdf:resource="http://edamontology.org/format_1915"/>
+        <owl:disjointWith rdf:resource="http://edamontology.org/operation_0004"/>
+        <owl:disjointWith rdf:resource="http://edamontology.org/topic_0003"/>
+        <owl:disjointWith rdf:resource="http://www.w3.org/2002/07/owl#DeprecatedClass"/>
+        <oboInOwl:hasDefinition>Information, represented in an information artefact (data record) that is &apos;understandable&apos; by dedicated computational tools that can use the data as input or produce it as output.</oboInOwl:hasDefinition>
+        <rdfs:label>Data</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://edamontology.org/format_1915 -->
+
+    <owl:Class rdf:about="http://edamontology.org/format_1915">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://biotoolsRDF.org/hasDataFormat"/>
+                <owl:allValuesFrom rdf:resource="http://edamontology.org/format_1915"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="http://edamontology.org/operation_0004"/>
+        <owl:disjointWith rdf:resource="http://edamontology.org/topic_0003"/>
+        <owl:disjointWith rdf:resource="http://www.w3.org/2002/07/owl#DeprecatedClass"/>
+        <oboInOwl:hasDefinition>A defined way or layout of representing and structuring data in a computer file, blob, string, message, or elsewhere.</oboInOwl:hasDefinition>
+        <rdfs:label>Format</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://edamontology.org/operation_0004 -->
+
+    <owl:Class rdf:about="http://edamontology.org/operation_0004">
+        <owl:disjointWith rdf:resource="http://edamontology.org/topic_0003"/>
+        <owl:disjointWith rdf:resource="http://www.w3.org/2002/07/owl#DeprecatedClass"/>
+        <oboInOwl:hasDefinition>A function that processes a set of inputs and results in a set of outputs, or associates arguments (inputs) with values (outputs).</oboInOwl:hasDefinition>
+        <rdfs:label>Operation</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://edamontology.org/topic_0003 -->
 
-    <owl:Class rdf:about="http://edamontology.org/topic_0003"/>
+    <owl:Class rdf:about="http://edamontology.org/topic_0003">
+        <owl:disjointWith rdf:resource="http://www.w3.org/2002/07/owl#DeprecatedClass"/>
+        <oboInOwl:hasDefinition>A category denoting a rather broad domain or field of interest, of study, application, work, data, or technology. Topics have no clearly defined borders between each other.</oboInOwl:hasDefinition>
+        <rdfs:label>Topic</rdfs:label>
+    </owl:Class>
     
 
 
@@ -7164,6 +7741,11 @@
         <rdfs:label>Tool type</rdfs:label>
         <created_in>1.0</created_in>
     </rdf:Description>
+    <rdf:Description rdf:about="http://biotoolsRDF.org/collectionId">
+        <oboInOwl:hasDefinition>Tool has assignment to some collection in bio.tools. Defines a tool (biotoolsRDF:Tool) to have a certain collectionId value (xsd:token).</oboInOwl:hasDefinition>
+        <created_in rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1.0</created_in>
+        <rdfs:label>collectionId</rdfs:label>
+    </rdf:Description>
     <rdf:Description rdf:about="http://edamontology.org/is_format_of">
         <oboInOwl:hasRelatedSynonym>OBO_REL:quality_of</oboInOwl:hasRelatedSynonym>
     </rdf:Description>
@@ -7174,34 +7756,46 @@
         <rdfs:comment>Is defined anywhere? Not in the &apos;unknown&apos; version of RO. &apos;OBO_REL:quality_of&apos; might be seen narrower in the sense that it only relates subjects that are a &apos;quality&apos; (snap:Quality) with objects that are an &apos;independent_continuant&apos; (snap:IndependentContinuant), and is broader in the sense that it relates any qualities of the object.</rdfs:comment>
     </owl:Axiom>
     <rdf:Description rdf:about="http://purl.org/dc/terms/description">
-        <oboInOwl:inSubset>relations</oboInOwl:inSubset>
+        <oboInOwl:hasDefinition>Defines a tool (biotoolsRDF:Tool) to have a textual description (xsd:token).</oboInOwl:hasDefinition>
         <oboInOwl:hasExactSynonym>dcterms:Description</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasDefinition>Defines a tool (biotoolsRDF:Tool) to have a textual description (rdfs:Literal).</oboInOwl:hasDefinition>
         <rdfs:label>description</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://purl.org/dc/terms/hasVersion">
+        <oboInOwl:hasDefinition>Miscellaneous entity has associated version information. Defines a tool (biotoolsRDF:Tool), OtherId (biotoolsRDF:OtherId), related resource (biotoolsRDF:RelatedResource) or publication (biotoolsRDF:Publication) to have associated version information (xsd:token).</oboInOwl:hasDefinition>
+        <oboInOwl:hasExactSynonym>dcterms:hasVersion</oboInOwl:hasExactSynonym>
+        <rdfs:label>hasVersion</rdfs:label>
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.org/dc/terms/identifier">
         <rdfs:label>identifier</rdfs:label>
+        <oboInOwl:hasDefinition>Miscellaneous entity has an identifier. Defines a tool (biotoolsRDF:Tool), identifiers object (biotoolsRDF:OtherId), credit (biotoolsRDF:Credit) or publication (biotoolsRDF:Publication) to have a unique identifier value (xsd:token).</oboInOwl:hasDefinition>
         <oboInOwl:hasExactSynonym>dcterms:Identifier</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasDefinition>Defines a miscellaneous entity (biotoolsRDF:Tool,biotoolsRDF:OtherId, biotoolsRDF:Credit, biotoolsRDF:Publication) to have a unique identifier (rdfs:Literal).</oboInOwl:hasDefinition>
-        <oboInOwl:inSubset>relations</oboInOwl:inSubset>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://purl.org/dc/terms/title">
+        <oboInOwl:hasDefinition>Defines a tool (biotoolsRDF:Tool) as having a name (dcterms:title).</oboInOwl:hasDefinition>
+        <oboInOwl:hasExactSynonym>dcterms:title</oboInOwl:hasExactSynonym>
+        <rdfs:label>Tool name</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.w3.org/2000/01/rdf-schema#comment">
+        <oboInOwl:hasDefinition>A miscellaneous comment.  Defines a tool function (biotoolsRDF:Function), related resource (biotoolsRDF:RelatedResource), credit (biotoolsRDF:Credit) or publication (biotoolsRDF:Publication) to have an associated comment.</oboInOwl:hasDefinition>
+        <oboInOwl:hasExactSynonym>rdfs:comment</oboInOwl:hasExactSynonym>
+        <rdfs:label>comment</rdfs:label>
     </rdf:Description>
     <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/mbox">
         <rdfs:label>email</rdfs:label>
         <oboInOwl:inSubset>relations</oboInOwl:inSubset>
-        <oboInOwl:hasDefinition>Defines a credited entity (biotoolsRDF:Credit) as having an email address (rdfs:Literal).</oboInOwl:hasDefinition>
+        <oboInOwl:hasDefinition>Credited entity has an email address. Defines a credited entity (biotoolsRDF:Credit) as having an email address (xsd:token).</oboInOwl:hasDefinition>
         <oboInOwl:hasExactSynonym>foaf:mbox</oboInOwl:hasExactSynonym>
     </rdf:Description>
     <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/name">
         <rdfs:label>name</rdfs:label>
         <oboInOwl:inSubset>relations</oboInOwl:inSubset>
+        <oboInOwl:hasDefinition>Credited entity has a name.  Defines a credited entity (biotoolsRDF:Credit) as having a name (xsd:token).</oboInOwl:hasDefinition>
         <oboInOwl:hasExactSynonym>foaf:name</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasDefinition>Defines a credited entity (biotoolsRDF:Credit) or tool (biotoolsRDF:Tool) as having a name (rdfs:Literal).</oboInOwl:hasDefinition>
     </rdf:Description>
     <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/page">
-        <oboInOwl:inSubset>relations</oboInOwl:inSubset>
         <rdfs:label>url</rdfs:label>
         <oboInOwl:hasExactSynonym>foaf:page</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasDefinition>Defines an entity (biotoolsRDF:Tool, biotoolsRDF:RelatedResource, biotoolsRDF:Credit) as having an associated URL (rdfs:Literal).</oboInOwl:hasDefinition>
+        <oboInOwl:hasDefinition>Misc. entity has a URL. Defines an entity (biotoolsRDF:Tool, biotoolsRDF:RelatedResource, biotoolsRDF:Credit) as having an associated URL (xsd:anyURI).</oboInOwl:hasDefinition>
     </rdf:Description>
 </rdf:RDF>
 

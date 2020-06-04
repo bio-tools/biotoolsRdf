@@ -13,11 +13,11 @@ biotoolsRDF uses classes and properties from the following vocabularies:
 
 prefix   | namespace IRI                               | definition
 -------- | ------------------------------------------- | ----------
-rdfs     | http://www.w3.org/2000/01/rdf-schema#       | [RDF Schema 1.1 namespace](https://www.w3.org/TR/2014/REC-rdf-schema-20140225/)
 xsd      | http://www.w3.org/2000/10/XMLSchema#        | [XML Schema Namespace](https://www.w3.org/TR/2012/REC-xmlschema11-2-20120405/)
-edam     | http://edamontology.org#                    | [EDAM namespace](https://github.com/edamontology/edamontology)
-foaf     | http://xmlns.com/foaf/0.1/#                 | [FOAF namespace](http://xmlns.com/foaf/spec/)
+rdfs     | http://www.w3.org/2000/01/rdf-schema#       | [RDF Schema 1.1 namespace](https://www.w3.org/TR/2014/REC-rdf-schema-20140225/)
 dcterms  | http://purl.org/dc/terms/                   | [DCMI terms namespace](http://dublincore.org/documents/dcmi-terms/) of Dublin Core Metadata Initiative
+foaf     | http://xmlns.com/foaf/0.1/#                 | [FOAF namespace](http://xmlns.com/foaf/spec/)
+edam     | http://edamontology.org#                    | [EDAM namespace](https://github.com/edamontology/edamontology)
 
 
 
@@ -49,7 +49,7 @@ biotools:Maturity            | Software development stage      | ```<maturity>``
 biotools:OtherId             | Software unique identifier      | ```<otherID>```
 biotools:OtherIdType         | Type of software identifier     | ```<otherID><type>```
 biotools:Function            | Software function / mode        | ```<function>```
-biotools:Data                | Input or output data            | ```<function><input>\|<output>```
+biotools:IOData              | Input or output data            | ```<function><input>\|<output>```
 edam:Data                    | Type of data                    | ```<function><input>\|<output><data>```
 edam:Format                  | Format of data                  | ```<function><input>\|<output><format>```
 edam:Operation               | Basic operation / method        | ```<function><operation>```
@@ -96,32 +96,32 @@ biotoolsRDF uses the following properties:
 
 property                    | note
 ---------------------       | --------------   
-biotools:accessibility      | Tool has an accessibility tag
+biotools:hasAccessibility   | Tool has an accessibility tag
 biotools:collectionId       | Tool has assignment to some collection in bio.tools
-biotools:cost               | Tool has a monetary cost
-biotools:elixirCredit       | Tool has a credited entity
+biotools:hasCost            | Tool has a monetary cost
+biotools:hasElixirCredit    | Tool has a credited ELIXIR entity
 biotools:hasFunction        | Tool has a function/mode of operating
 biotools:hasInput           | Tool function/mode has an input
 biotools:hasOperation       | Tool function/mode performs some specific operation 
-biotools:hasOtherId         | Tool has an identifier (normally other than biotools ID)
+biotools:hasOtherId         | Tool has an identifier (typically in addition to bio.tools toolID)
 biotools:hasOutput          | Tool function/mode has an output
 biotools:hasRelatedResource | Tool has a related resource (link, download or documentation)
-biotools:maturity           | Tool has assocatited product maturity level
-biotools:operatingSystem    | Tool has supported operating system
+biotools:hasMaturity        | Tool has associated product maturity level
+biotools:hasOperatingSystem | Tool has supported operating system
 biotools:cmd                | Tool function/mode has pertinent command-line fragment
 biotools:hasDataType        | Input or output is of a certain data type
 biotools:hasDataFormat      | Input or output supported in a certain data format
 dcterms:description         | Tool has a textual description
-dcterms:identifier          | Misc entity has some identifier value
+dcterms:identifier          | Misc entity has an identifier
 dcterms:language            | Tool has a relevant programming languages(s)
 dcterms:license             | Tool has a software or data usage license
 dcterms:subject             | Tool has a relevant EDAM topic
 dcterms:title               | Tool has a name
 dcterms:type                | Misc entity has tags from controlled vocabulary
-foaf:name                   | Misc entity has a name
+foaf:name                   | Credited entity has a name
 foaf:mbox                   | Credited entity has an email address
 foaf:page                   | Misc. entity has a URL
-dcterms:hasVersion          | Misc. entity has an associated version number
+dcterms:hasVersion          | Misc. entity has associated version information
 rdfs:comment                | Misc. entity has an associated note
 
 
@@ -149,14 +149,14 @@ dcterms:identifier              | xsd:token                 | ```<biotoolsCURIE>
 dcterms:hasVersion              | xsd:token                 | ```<version>```
 dcterms:type                    | biotools:ToolType         | ```<toolType>```
 dcterms:subject (2)             | edam:Topic                | ```<topic>```
-biotools:operatingSystem        | biotools:OperatingSystem  | ```<operatingSystem>```
+biotools:hasOperatingSystem     | biotools:OperatingSystem  | ```<operatingSystem>```
 dcterms:language                | biotools:Language         | ```<language>```
 dcterms:license                 | biotools:License          | ```<license>```
 biotools:collectionId           | xsd:token                 | ```<collectionID>```
-biotools:maturity               | biotools:Maturity         | ```<maturity>```
-biotools:cost                   | biotools:Cost             | ```<cost>```
-biotools:accessibility          | biotools:Accessibility    | ```<accessibility>```
-biotools:elixirCredit           | biotools:ElixirCredit     | ```<elixirNode>\|<elixirPlatform>\|<elixirCommunity>```
+biotools:hasMaturity            | biotools:Maturity         | ```<maturity>```
+biotools:hasCost                | biotools:Cost             | ```<cost>```
+biotools:hasAccessibility       | biotools:Accessibility    | ```<accessibility>```
+biotools:hasElixirCredit        | biotools:ElixirCredit     | ```<elixirNode>\|<elixirPlatform>\|<elixirCommunity>```
 biotools:hasOtherId             | biotools:OtherId          | ```<otherID>```
 biotools:hasFunction            | biotools:Function         | ```<function>```
 biotools:hasRelatedResource (3) | biotools:RelatedResource  | ```<link>\|<download>\|<documentation>```
@@ -185,15 +185,15 @@ dcterms:hasVersion           | xsd:token                    | ```<otherid><versi
 ![biotools:Function](images/Function.PNG)
 
 
-property              | value          | biotoolsSchema
---------------------- | -------------- | ---------------------
-biotools:hasInput     | biotools:Data  | ```<function><input>```
-biotools:hasOperation | edam:Operation | ```<function><operation>```
-biotools:hasOutput    | biotools:Data  | ```<function><output>```
-biotools:cmd          | xsd:token      | ```<function><cmd>```
-rdfs:comment          | xsd:token      | ```<function><note>```
+property              | value           | biotoolsSchema
+--------------------- | --------------- | ---------------------
+biotools:hasInput     | biotools:IOData | ```<function><input>```
+biotools:hasOperation | edam:Operation  | ```<function><operation>```
+biotools:hasOutput    | biotools:IOData | ```<function><output>```
+biotools:cmd          | xsd:token       | ```<function><cmd>```
+rdfs:comment          | xsd:token       | ```<function><note>```
 
-## biotools:Data
+## biotools:IOData
 
 property               | value       | biotoolsSchema
 ---------------------- | ----------- | ----------------------------------
@@ -244,6 +244,6 @@ dcterms:identifier           | xsd:token                    | ```<publication><p
 dcterms:identifier           | xsd:token                    | ```<publication><pmcid>```
 dcterms:type                 | biotools:PublicationType     | ```<publication><type>```
 dcterms:hasVersion           | xsd:token                    | ```<publication><version>```
-
+rdfs:comment                 | xsd:token                    | ```<publication><note>```
 
 
